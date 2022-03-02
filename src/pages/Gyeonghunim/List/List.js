@@ -1,7 +1,7 @@
 import React from "react";
 
-const Main = () => {
+const List = () => {
   return;
 };
 
-export default Main;
+export default List;
