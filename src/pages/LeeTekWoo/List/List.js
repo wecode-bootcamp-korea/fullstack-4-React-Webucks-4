@@ -8,7 +8,7 @@ function List() {
   const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/data/PRODUCT_CARD.json", {
+    fetch("http://localhost:3001/data/leetekwoo/PRODUCT_CARD.json", {
       method: "GET",
     })
       .then((res) => res.json()) // res.json() 역할이 무엇인지

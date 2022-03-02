@@ -16,7 +16,9 @@ function Detail() {
 
   const [commentList, setComment] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/data/COMMENT_Data.json", { method: "GET" })
+    fetch("http://localhost:3001/data/leetekwoo/COMMENT_Data.json", {
+      method: "GET",
+    })
       .then((res) => res.json())
       .then((data) => {
         setComment(data);
