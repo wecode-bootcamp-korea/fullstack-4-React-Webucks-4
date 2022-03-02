@@ -1,0 +1,184 @@
+
+
+.detail {
+    display: inline-flexbox;
+    padding: 30px 20px;
+}
+
+.detail__title {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.detail__path {
+    color: rgb(170, 170, 170);
+    text-align: right;
+}
+
+
+.detail__article {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.detail__img {
+    float: left;
+    width: 30vw;
+    margin-right: 40px;
+    transition: none;
+}
+
+.detail__img:hover {
+    transform: none;
+}
+
+.article__content {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.coffeeDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coffeeDetails__titleBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.coffeeDetails__title {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.fas {
+    color: lightgray;
+    font-size: larger;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.liked {
+    color: red;
+}
+
+.coffeeDetails__description {
+    margin: 26px 0;
+}
+
+.coffeeDetails__line {
+    margin-top: 24px;
+    border: 2px solid darkgray;
+}
+
+
+
+hr {
+    margin: 8px 0;
+    border: 1px solid gray;
+}
+
+.coffeeDetails__container__nutrition {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: larger;
+}
+
+.container__nutrition__info {
+    display: flex;
+    justify-content:space-between;
+    padding: 6px;
+    line-height: 180%;
+}
+
+.nutrition__info__left {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    border-right: 1.5px dotted lightgray;
+}
+
+.nutrition__info__right {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.txtRight {
+    text-align: right;
+}
+
+
+.coffeeDetails__allergy {
+    padding: 14px 16px;
+    margin: 6px 0;
+    border-radius: 2px;
+    background-color: lightgray;
+}
+
+
+.review__title {
+    margin: 50px 0 12px 0;
+    font-size:larger;
+    font-weight: bold;
+}
+
+.review__oneline {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.review__id {
+    flex: 1;
+    margin-right: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.review__text {
+    flex: 9;
+    display: inline-block;
+    width: 88%;
+    margin: 3px 0;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.review__input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 2px;
+    background-color: lightgray;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .detail__img {
+        width: 90vw;
+        margin: 0 10px 10px 0;
+    }
+
+    article  {
+        display:block;
+    }
+
+    .article__content {
+        width: 100%;
+    }
+
+}   
