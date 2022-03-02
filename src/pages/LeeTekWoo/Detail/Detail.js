@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TopsNav from "../TopsNav/TopsNav";
 import { Link } from "react-router-dom";
-import NewComment from "./NewComment";
-import NewCommentClass from "./NewCommentClass";
+// import NewComment from "./NewComment";
+// import NewCommentClass from "./NewCommentClass";
 import Comment from "./Comment";
 import "./Detail.scss";
 
