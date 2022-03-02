@@ -33,7 +33,7 @@ function Detail() {
         </Link>
         <div className="containerDetail">
           <section className="detailInfo">
-            <img src="/images/coldbrew (5).jpg" alt="coldbrew5" />
+            <img src="/images/leetekwoo/coldbrew (5).jpg" alt="coldbrew5" />
           </section>
           <section className="detailInfo">
             <div className="infoTitle">
