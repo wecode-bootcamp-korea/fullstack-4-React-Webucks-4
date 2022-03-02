@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+.Login {
+  width: 380px;
+  height: 450px;
+  margin: 50px auto;
+  padding: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
+
+  .title {
+    margin-bottom: 90px;
+    font: {
+      family: "Dancing Script", cursive;
+      size: 50px;
+      weight: 700;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 90px;
+    .id,
+    .pw,
+    .btn {
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    .id,
+    .pw {
+      background-color: rgba(0, 0, 0, 0.03);
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    .btn {
+      background-color: #61aded;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      opacity: 0.5;
+    }
+  }
+
+  .findPW {
+    color: #8da6b7;
+    font: {
+      size: 13px;
+      weight: 500;
+    }
+  }
+}
+
+.active {
+  cursor: pointer;
+  opacity: 1;
+}
