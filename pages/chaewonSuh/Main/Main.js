@@ -1,7 +1,7 @@
 import React from "react";
 
-const Main = () => {
+const ChaewonMain = () => {
   return;
 };
 
-export default Main;
+export default ChaewonMain;

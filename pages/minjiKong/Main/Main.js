@@ -1,7 +1,7 @@
 import React from "react";
 
-const Main = () => {
+const MinjiMain = () => {
   return;
 };
 
-export default Main;
+export default MinjiMain;

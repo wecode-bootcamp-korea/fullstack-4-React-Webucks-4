@@ -1,7 +1,7 @@
 import React from "react";
 
-const Main = () => {
+const MinwooMain = () => {
   return;
 };
 
-export default Main;
+export default MinwooMain;

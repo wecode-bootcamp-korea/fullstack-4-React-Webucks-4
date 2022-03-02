@@ -1,0 +1,79 @@
+.bodyLogin {
+  background-color: #eeefef;
+  height: 100vh;
+}
+
+.backgroundLogin {
+  display: flex;
+  justify-content: center;
+}
+.containerLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 28rem;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-top: 5rem;
+
+  img {
+    margin: 3rem 0;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+
+  .Input {
+    all: unset;
+    width: 20rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background: #eeefef;
+  }
+
+  .Input:focus {
+    background-color: #ffffff;
+  }
+
+  i {
+    position: relative;
+    margin: 0;
+    bottom: 2.2rem;
+    left: 90%;
+    cursor: pointer;
+    background: none;
+  }
+
+  .loginButton {
+    all: unset;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    background-color: #378bcc;
+    line-height: 1.5;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .searchPw {
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background-color: #ffffff;
+    color: #a8bfd0;
+    margin: 4rem 0;
+  }
+
+  .searchPw:hover {
+    color: #378bcc;
+  }
+}

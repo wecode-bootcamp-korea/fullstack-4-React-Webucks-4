@@ -1,7 +1,7 @@
 import React from "react";
 
-const Main = () => {
+const GyeonghunMain = () => {
   return;
 };
 
-export default Main;
+export default GyeonghunMain;

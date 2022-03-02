@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "아이스 아메리카노",
+    "imageURL": "/images/coldbrew (1).jpg",
+    "price": 3200,
+    "type": "Cold Brew",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 2,
+    "name": "커피 위벅스 더블 샷",
+    "imageURL": "/images/coldbrew (2).jpg",
+    "price": 4000,
+    "type": "Cold Brew",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 3,
+    "name": "콜드 브루 라떼",
+    "imageURL": "/images/coldbrew (3).jpg",
+    "price": 4500,
+    "type": "Cold Brew",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 4,
+    "name": "콜드 브루 아이스크림",
+    "imageURL": "/images/coldbrew (4).jpg",
+    "price": 5500,
+    "type": "Cold Brew",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 5,
+    "name": " 콜드 브루 몰트",
+    "imageURL": "/images/coldbrew (5).jpg",
+    "price": 6500,
+    "type": "Cold Brew",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 6,
+    "name": "콜드 브루 오트 라떼",
+    "imageURL": "/images/coldbrew (7).jpg",
+    "price": 5500,
+    "type": "Cold Brew",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 7,
+    "name": "시그니처 더 블랙 콜드 브루",
+    "imageURL": "/images/coldbrew (8).jpg",
+    "price": 5500,
+    "type": "Cold Brew",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 8,
+    "name": "콜드 브루 라떼 더블",
+    "imageURL": "/images/coldbrew (5).jpg",
+    "price": 4500,
+    "type": "Cold Brew",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 9,
+    "name": " 오늘의 커피 : 블랙 커피",
+    "imageURL": "/images/coldbrew (6).jpg",
+    "price": 3500,
+    "type": "Brewed Coffee",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 10,
+    "name": "헤이즐넛 더블 샷",
+    "imageURL": "/images/coldbrew (7).jpg",
+    "price": 4000,
+    "type": "Brewed Coffee",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 11,
+    "name": "커피 위벅스 더블 샷",
+    "imageURL": "/images/coldbrew (8).jpg",
+    "price": 4500,
+    "type": "Brewed Coffee",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 12,
+    "name": "아이스 카페 라떼",
+    "imageURL": "/images/coldbrew (1).jpg",
+    "price": 3000,
+    "type": "Brewed Coffee",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 13,
+    "name": "플랫 화이트",
+    "imageURL": "/images/coldbrew (2).jpg",
+    "price": 4000,
+    "type": "Brewed Coffee",
+    "canIce": true,
+    "like": false
+  },
+  {
+    "id": 14,
+    "name": "브루드 아이스 아메리카노",
+    "imageURL": "/images/coldbrew (2).jpg",
+    "price": 3500,
+    "type": "Brewed Coffee",
+    "canIce": true,
+    "like": false
+  }
+]
