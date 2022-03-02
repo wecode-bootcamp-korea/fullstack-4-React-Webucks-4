@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+header > p {
+  font-family: "Dancing Script";
+  font-size: x-large;
+  font-weight: 700;
+  margin: 0;
+}
+
+.headerMenu {
+  display: flex;
+  margin: 0;
+}
+
+.headerMenu a {
+  text-decoration: none;
+  font-size: small;
+  color: #b87835;
+  padding-right: 1rem;
+}
+
+.headerMenu a:last-child {
+  padding-right: 2rem;
+}
+
+header,
+.title {
+  padding: 0.5rem 1rem;
+  background-color: #f4f4f2;
+}
+
+.title {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
