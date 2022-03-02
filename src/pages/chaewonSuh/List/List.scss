@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+.links {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    // margin-bottom: 20px;
+
+    background-color: #e2e4e0;
+
+    .listLogo{
+        font-family: 'Dancing Script';
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    .menus {
+        display: flex;
+
+        .topRightMenu{
+            margin: 10px;
+            font-size: 16px;
+            font-weight: 150;
+        }
+    }    
+}
+
+
+.coffeeHeader  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding:10px 30px;
+    margin: 27px 0;
+    background-color: #e2e4e0;
+
+    .categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // width: 390px;
+
+        .espCategory {
+        font-weight: bold;
+        font-size: 20px;
+        }
+
+        .fa-solid {
+            font-size: 30px;
+            color: green;
+            padding: 0 10px;
+        }
+
+        .description {
+            font-size: 16px;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+.espList {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0;
+
+    .coffeeLists {
+
+    
+    }
+}
+
+
+dl {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    dt {
+    object-fit: contain;
+    position: relative;
+    top: -16px;
+    width: 300px;
+    height: 270px;
+
+    overflow: hidden;
+
+        .detailLink {
+
+            overflow: hidden;
+            border: 0;
+
+            .cortadoImg {
+                top: -120px;
+                left: 0;
+                object-fit: contain;
+                position: absolute;
+                width: 100%
+                
+            }
+
+            .espMacchiatoImg {
+                top: -80px;
+                left: -26px;
+                width: 120%;
+                object-fit: contain;
+                position: absolute;
+            }
+
+
+            .americanoImg {
+                bottom: -87px;
+                left: 0px;
+                object-fit: contain;
+                position: absolute;
+                width: 100%;
+            }
+
+            img:hover {
+            transform: scale(1.2);
+            transition-duration: 0.7s;
+            }
+        }
+    }
+
+    .coffeeName {
+
+    }
+}
+
+
+
+.coffeeName{
+    margin: 0;
+}
+
+.brewedList {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.brewedCategory {   
+    padding-right: 70px;
+}
