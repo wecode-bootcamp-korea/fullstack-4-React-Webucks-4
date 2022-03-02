@@ -17,6 +17,11 @@ import LoginYeonjoo from "./pages/yeonjookim/Login/Login";
 import ListYeonjoo from "./pages/yeonjookim/List/List";
 import DetailYeonjoo from "./pages/yeonjookim/Detail/Detail";
 
+// 채원's 컴포넌트
+import LoginChaeWon from "./pages/chaewonSuh/Login/Login";
+import ListChaeWon from "./pages/chaewonSuh/List/List";
+import DetailChaeWon from "./pages/chaewonSuh/Detail/Detail";
+
 
 function App() {
   return (
@@ -33,6 +38,10 @@ function App() {
         <Route path="/Login-yeonjoo" element={<LoginYeonjoo />} />
         <Route path="/List-yeonjoo" element={<ListYeonjoo />} />
         <Route path="/Detail-yeonjoo" element={<DetailYeonjoo />} />
+
+        <Route path="/Login-ChaeWon" element={<LoginChaeWon />} />
+        <Route path="/List-ChaeWon" element={<ListChaeWon />} />
+        <Route path="/Detail-ChaeWon" element={<DetailChaeWon />} />
       </Routes>
     </BrowserRouter>
   );
