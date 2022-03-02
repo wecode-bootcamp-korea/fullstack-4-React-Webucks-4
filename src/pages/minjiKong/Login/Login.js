@@ -1,7 +1,7 @@
 import React from "react";
 
-const Login = () => {
+const LoginMinji = () => {
   return;
 };
 
-export default Login;
+export default LoginMinji;

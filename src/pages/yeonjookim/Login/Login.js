@@ -1,7 +1,7 @@
 import React from "react";
 
-const Login = () => {
+const LoginYeonjoo = () => {
   return;
 };
 
-export default Login;
+export default LoginYeonjoo;

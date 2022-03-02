@@ -22,6 +22,16 @@ import LoginChaeWon from "./pages/chaewonSuh/Login/Login";
 import ListChaeWon from "./pages/chaewonSuh/List/List";
 import DetailChaeWon from "./pages/chaewonSuh/Detail/Detail";
 
+// 경훈's 컴포넌트
+import LoginGyeonghun from './pages/Gyeonghunim/Login/Login';
+import ListGyeonghun from './pages/Gyeonghunim/List/List';
+import DetailGyeonghun from './pages/Gyeonghunim/Detail/Detail';
+
+// 민우's 컴포넌트
+import LoginMinwoo from './pages/minwooKim/Login/Login';
+import ListMinwoo from './pages/minwooKim/List/List';
+import DetailMinwoo from './pages/minwooKim/Detail/Detail';
+
 
 function App() {
   return (
@@ -42,6 +52,15 @@ function App() {
         <Route path="/Login-ChaeWon" element={<LoginChaeWon />} />
         <Route path="/List-ChaeWon" element={<ListChaeWon />} />
         <Route path="/Detail-ChaeWon" element={<DetailChaeWon />} />
+
+        <Route path="/login-gyeonghun" element={<LoginGyeonghun />} />
+        <Route path="/list-gyeonghun" element={<ListGyeonghun />} />
+        <Route path="/detail-gyeonghun" element={<DetailGyeonghun />} />
+
+        <Route path="/login-minwoo" element={<LoginMinwoo />} />
+        <Route path="/list-minwoo" element={<ListMinwoo />} />
+        <Route path="/detail-minwoo" element={<DetailMinwoo />} />
+
       </Routes>
     </BrowserRouter>
   );
