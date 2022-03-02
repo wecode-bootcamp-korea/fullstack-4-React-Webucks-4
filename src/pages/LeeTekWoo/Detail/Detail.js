@@ -23,6 +23,26 @@ function Detail() {
       });
   }, []);
 
+  const [newComment, setNewComment] = useState([]);
+  const [newInput, setNewInput] = useState({
+    value: "",
+  });
+  const comment = "test 댓글";
+
+  const [inputComment, setInputComment] = useState("");
+  const onCommentChange = (e) => {
+    console.log(inputComment);
+    setInputComment(e.target.value);
+  };
+
+  const getCommentInput = (e) => {
+    setNewInput({
+      value: e.target.value,
+    });
+    setNewComment(newInput);
+    console.log(newComment);
+  };
+
   return (
     <div>
       <div className="wholePage">
@@ -96,9 +116,20 @@ function Detail() {
                     />
                   );
                 })}
-                {}
-
-                <NewComment />
+                <Comment name={1} content={"121"} key={1} />
+                {newComment.map((comment) => {
+                  return <Comment content={comment.value} />;
+                })}
+                <form onClick={getCommentInput}>
+                  <input
+                    type="text"
+                    className="reviewLog"
+                    placeholder="리뷰를 작성해주세요"
+                    value={inputComment}
+                    onChange={onCommentChange}
+                  />
+                  <button className="writeReview">작성</button>
+                </form>
               </div>
             </div>
           </section>
