@@ -1,0 +1,76 @@
+{
+"coldBrewCoffee":[
+    {
+        "id": "ColdBrew",
+        "name": "콜드 브루",
+        "imgUrl": "/images/ColdBrew.jpg"
+    }
+    ,
+    {
+        "id": "JejuForestColdBrew",
+        "name": "제주 비자림 콜드 브루",
+        "imgUrl": "/images/JejuForestColdBrew.jpg"
+    }
+    ,
+    {
+        "id": "SignatureTheBlackColdBrew",
+        "name": "시그니처 더 블랙 콜드 브루",
+        "imgUrl": "/images/SignatureTheBlackColdBrew.jpg"
+    }
+    ,
+    {
+        "id": "VanillaCreamColdBrew",
+        "name": "바닐라 크림 콜드 브루",
+        "imgUrl": "/images/VanillaCreamColdBrew.jpg"
+    }
+    ,
+    {
+        "id": "DolceColdBrew",
+        "name": "돌체 콜드 브루",
+        "imgUrl": "/images/DolceColdBrew.jpg"
+    }
+    ,
+    {
+        "id": "NitroColdBrew",
+        "name": "나이트로 콜드 브루",
+        "imgUrl": "/images/NitroColdBrew.jpg"
+    }
+    ,
+    {
+        "id": "NitroVanillaCream",
+        "name": "나이트로 바닐라 크림",
+        "imgUrl": "/images/NitroVanillaCream.jpg"
+    }
+    ,
+    {
+        "id": "ColdBrewFloat",
+        "name": "콜드 브루 플로트",
+        "imgUrl": "/images/ColdBrewFloat.jpg"
+    }
+    ,
+    {
+        "id": "ColdBrewWithOatMilk",
+        "name": "콜드 브루 오트 라떼",
+        "imgUrl": "/images/ColdBrewWithOatMilk.jpg"
+    }
+    ,
+    {
+        "id": "ColdBrewMalt",
+        "name": "콜드 브루 몰트",
+        "imgUrl": "/images/ColdBrewMalt.jpg"
+    }
+],
+"brewedCoffee":[
+    {
+        "id": "IcedCoffee",
+        "name": "아이스 커피",
+        "imgUrl": "/images/IcedCoffee.jpg"
+    }
+    ,
+    {
+        "id": "BrewedCoffee",
+        "name": "오늘의 커피",
+        "imgUrl": "/images/BrewedCoffee.jpg"
+    }
+]
+}

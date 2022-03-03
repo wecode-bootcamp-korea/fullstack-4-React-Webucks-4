@@ -1,0 +1,43 @@
+{
+    "id": "BrewedCoffee"
+    ,
+    "type":"Brewed Coffee"
+    ,
+    "name":"오늘의 커피"
+    ,
+    "imgUrl": "/images/BrewedCoffee.jpg"
+    ,
+    "englishName":"Brewed Coffee"
+    ,
+    "description":"신선하게 브루드(Brewed)되어 원두의 다양함이 살아있는 커피"
+    ,
+    "size":"Tall(톨) / 355ml (12 fl oz)"
+    ,
+    "nutrition":
+    [{  "id":"1",
+        "name":"calorie",
+        "value":"5"
+    },
+    {  "id":"2",
+        "name":"natrium",
+        "value":"10"
+    },
+    {  "id":"3",
+        "name":"fat",
+        "value":"0"
+    },
+    {  "id":"4",
+        "name":"sugars",
+        "value":"0"
+    },
+    {  "id":"5",
+        "name":"protein",
+        "value":"0"
+    },
+    {  "id":"6",
+        "name":"caffeine",
+        "value":"260"
+    }]
+    ,
+    "allergyInfo":"없음"
+}

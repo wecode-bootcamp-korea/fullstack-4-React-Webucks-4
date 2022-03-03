@@ -1,0 +1,43 @@
+{
+    "id": "ColdBrewWithOatMilk"
+    ,
+    "type":"Cold Brew Coffee"
+    ,
+    "name":"콜드 브루 오트 라떼"
+    ,
+    "imgUrl": "/images/ColdBrewWithOatMilk.jpg"
+    ,
+    "englishName":"Cold Brew With Oat Milk"
+    ,
+    "description":"콜드 브루의 풍미와 깔끔한 오트 밀크가 어우러진 달콤 고소한 라떼. 식물성 밀크를 사용해 모든 고객이 부담없이 즐길 수 있는 콜드 브루 음료"
+    ,
+    "size":"Tall(톨) / 355ml (12 fl oz)"
+    ,
+    "nutrition":
+    [{  "id":"1",
+        "name":"calorie",
+        "value":"105"
+    },
+    {  "id":"2",
+        "name":"natrium",
+        "value":"95"
+    },
+    {  "id":"3",
+        "name":"fat",
+        "value":"0.3"
+    },
+    {  "id":"4",
+        "name":"sugars",
+        "value":"11"
+    },
+    {  "id":"5",
+        "name":"protein",
+        "value":"1"
+    },
+    {  "id":"6",
+        "name":"caffeine",
+        "value":"65"
+    }]
+    ,
+    "allergyInfo":"없음"
+}
