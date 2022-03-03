@@ -22,6 +22,19 @@ import LoginChaeWon from "./pages/chaewonSuh/Login/Login";
 import ListChaeWon from "./pages/chaewonSuh/List/List";
 import DetailChaeWon from "./pages/chaewonSuh/Detail/Detail";
 
+<<<<<<< HEAD
+// 경훈's 컴포넌트
+import LoginGyeonghun from './pages/Gyeonghunim/Login/Login';
+import ListGyeonghun from './pages/Gyeonghunim/List/List';
+import DetailGyeonghun from './pages/Gyeonghunim/Detail/Detail';
+
+// 민우's 컴포넌트
+import LoginMinwoo from './pages/minwooKim/Login/Login';
+import ListMinwoo from './pages/minwooKim/List/List';
+import DetailMinwoo from './pages/minwooKim/Detail/Detail';
+
+=======
+>>>>>>> 993779e262a3082334ca208ac6acc5373a31957f
 
 function App() {
   return (
@@ -42,6 +55,18 @@ function App() {
         <Route path="/Login-ChaeWon" element={<LoginChaeWon />} />
         <Route path="/List-ChaeWon" element={<ListChaeWon />} />
         <Route path="/Detail-ChaeWon" element={<DetailChaeWon />} />
+<<<<<<< HEAD
+
+        <Route path="/login-gyeonghun" element={<LoginGyeonghun />} />
+        <Route path="/list-gyeonghun" element={<ListGyeonghun />} />
+        <Route path="/detail-gyeonghun" element={<DetailGyeonghun />} />
+
+        <Route path="/login-minwoo" element={<LoginMinwoo />} />
+        <Route path="/list-minwoo" element={<ListMinwoo />} />
+        <Route path="/detail-minwoo" element={<DetailMinwoo />} />
+
+=======
+>>>>>>> 993779e262a3082334ca208ac6acc5373a31957f
       </Routes>
     </BrowserRouter>
   );
