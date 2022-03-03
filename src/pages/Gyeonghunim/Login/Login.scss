@@ -61,9 +61,17 @@ html {
     font-weight: bold;
     width: 280px;
     height: 35px;
-    background-color: rgb(180, 210, 232);
+
     border: rgb(200, 200, 200) solid 0px;
     border-radius: 7px;
+}
+
+.button_on{
+    background-color: rgb(114,172,230);
+}
+
+.button_off{
+    background-color: rgb(180, 210, 232);
 }
 .margin_top{
 margin-top: 10px;
