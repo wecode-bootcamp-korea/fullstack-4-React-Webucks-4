@@ -1,0 +1,43 @@
+{
+    "id": "VanillaCreamColdBrew"
+    ,
+    "type":"Cold Brew Coffee"
+    ,
+    "name":"바닐라 크림 콜드 브루"
+    ,
+    "imgUrl": "/images/VanillaCreamColdBrew.jpg"
+    ,
+    "englishName":"Vanilla Cream Cold Brew"
+    ,
+    "description":"콜드 브루에 더해진 바닐라 크림으로 깔끔하면서 달콤한 콜드 브루를 새롭게 즐길 수 있는 음료입니다."
+    ,
+    "size":"Tall(톨) / 355ml (12 fl oz)"
+    ,
+    "nutrition":
+    [{  "id":"1",
+        "name":"calorie",
+        "value":"125"
+    },
+    {  "id":"2",
+        "name":"natrium",
+        "value":"58"
+    },
+    {  "id":"3",
+        "name":"fat",
+        "value":"6"
+    },
+    {  "id":"4",
+        "name":"sugars",
+        "value":"11"
+    },
+    {  "id":"5",
+        "name":"protein",
+        "value":"3"
+    },
+    {  "id":"6",
+        "name":"caffeine",
+        "value":"150"
+    }]
+    ,
+    "allergyInfo":"우유"
+}

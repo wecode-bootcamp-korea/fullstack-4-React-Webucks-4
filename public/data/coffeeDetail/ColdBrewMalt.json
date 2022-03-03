@@ -1,0 +1,43 @@
+{
+    "id": "ColdBrewMalt"
+    ,
+    "type":"Cold Brew Coffee"
+    ,
+    "name":"콜드 브루 몰트"
+    ,
+    "imgUrl": "/images/ColdBrewMalt.jpg"
+    ,
+    "englishName":"Cold Brew Malt"
+    ,
+    "description":"[리저브 전용음료] 리저브 콜드 브루, 바닐라 아이스크림, 몰트가 블렌딩된 리저브만의 쉐이크"
+    ,
+    "size":"Tall(톨) / 355ml (12 fl oz)"
+    ,
+    "nutrition":
+    [{  "id":"1",
+        "name":"calorie",
+        "value":"505"
+    },
+    {  "id":"2",
+        "name":"natrium",
+        "value":"150"
+    },
+    {  "id":"3",
+        "name":"fat",
+        "value":"20"
+    },
+    {  "id":"4",
+        "name":"sugars",
+        "value":"41"
+    },
+    {  "id":"5",
+        "name":"protein",
+        "value":"7"
+    },
+    {  "id":"6",
+        "name":"caffeine",
+        "value":"190"
+    }]
+    ,
+    "allergyInfo":"대두/우유"
+}
