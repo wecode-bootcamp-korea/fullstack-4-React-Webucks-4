@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // import NewCommentClass from "./NewCommentClass";
 import Comment from "./Comment";
 import "./Detail.scss";
+import NewComment from "./NewComment";
 
 function Detail() {
   const [heart, setHeart] = React.useState("fa-regular fa-heart");
@@ -14,9 +15,10 @@ function Detail() {
       : setHeart("fa-regular fa-heart");
   };
 
+  // Mock 데이터 받아오기
   const [commentList, setComment] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/data/leetekwoo/COMMENT_Data.json", {
+    fetch("http://localhost:3000/data/leetekwoo/COMMENT_Data.json", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -25,24 +27,32 @@ function Detail() {
       });
   }, []);
 
-  const [newComment, setNewComment] = useState([]);
+  // 댓글란 하단에 새 댓글 추가하기
+
+  // map을 이용해 컴포넌트를 렌더링하기 위한 빈 배열
+  const [enters, setEnters] = useState([]);
+
+  // 댓글창에 입력된 문자를 가져오는 state
+  const [inputDataC, setInputDataC] = useState("");
+
+  // 위 배열에 들어가기 전 데이터 객체
+
   const [newInput, setNewInput] = useState({
     value: "",
   });
-  const comment = "test 댓글";
 
-  const [inputComment, setInputComment] = useState("");
+  // 댓글창에 문자가 입력될 때마다 그 문자를 state로 가져오는 함수
   const onCommentChange = (e) => {
-    console.log(inputComment);
-    setInputComment(e.target.value);
+    setInputDataC(e.target.value);
+    console.log(inputDataC);
+    // 댓글 창의 value들을 inputDataC에 문자가 바뀔 때마다 할당
   };
-
+  // inputDataC에 담긴 댓글 value를 빈 객체로 옮기고, 이 객체를 다시 배열에 넣어주기.
   const getCommentInput = (e) => {
-    setNewInput({
-      value: e.target.value,
-    });
-    setNewComment(newInput);
-    console.log(newComment);
+    e.preventDefault(); // form 태그 새로고침 발생 X
+    setEnters(enters.concat([newInput])); // 배열에 객체 추가.
+    console.log(enters);
+    setInputDataC("");
   };
 
   return (
@@ -118,16 +128,15 @@ function Detail() {
                     />
                   );
                 })}
-                <Comment name={1} content={"121"} key={1} />
-                {newComment.map((comment) => {
+                {enters.map((comment) => {
                   return <Comment content={comment.value} />;
                 })}
-                <form onClick={getCommentInput}>
+                <form onSubmit={getCommentInput}>
                   <input
                     type="text"
                     className="reviewLog"
                     placeholder="리뷰를 작성해주세요"
-                    value={inputComment}
+                    value={inputDataC}
                     onChange={onCommentChange}
                   />
                   <button className="writeReview">작성</button>

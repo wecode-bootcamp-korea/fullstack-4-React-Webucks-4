@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./List.scss";
 import TopsNav from "../TopsNav/TopsNav";
-import { Link } from "react-router-dom";
 import Card from "./Card";
 
 function List() {
   const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/data/leetekwoo/PRODUCT_CARD.json", {
+    fetch("http://localhost:3000/data/leetekwoo/PRODUCT_CARD.json", {
       method: "GET",
     })
       .then((res) => res.json()) // res.json() 역할이 무엇인지

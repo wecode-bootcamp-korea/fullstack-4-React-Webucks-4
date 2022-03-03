@@ -17,26 +17,28 @@ function Login() {
     cursor: "pointer",
   };
 
-  const borderA = {
-    display: "inline",
-  };
-  const borderG = {
-    border: "1px solid #03a310",
-  };
-  const borderR = {
-    border: "1px solid #bd0707",
-  };
+  // const borderA = {
+  //   display: "inline",
+  // };
+  // const borderG = {
+  //   border: "1px solid #03a310",
+  // };
+  // const borderR = {
+  //   border: "1px solid #bd0707",
+  // };
 
   const [Btn, setBtn] = React.useState(btnOff);
   const [eye, setEye] = React.useState("fa-regular fa-eye");
-  const [border, setBorderColor] = React.useState(borderA);
+  // const [border, setBorderColor] = React.useState(borderA);
 
   const handleIdInput = (e) => {
     setidValue(e.target.value);
   };
 
   const handlePwInput = (e) => {
+    console.log(e.target.value);
     setpwValue(e.target.value);
+    console.log(pwValue);
   };
 
   const setLogin = () => {
