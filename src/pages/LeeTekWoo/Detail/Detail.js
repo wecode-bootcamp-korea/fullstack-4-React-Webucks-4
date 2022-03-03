@@ -28,7 +28,6 @@ function Detail() {
   }, []);
 
   // 댓글란 하단에 새 댓글 추가하기
-
   // map을 이용해 컴포넌트를 렌더링하기 위한 빈 배열
   const [enters, setEnters] = useState([]);
 
@@ -44,15 +43,26 @@ function Detail() {
   // 댓글창에 문자가 입력될 때마다 그 문자를 state로 가져오는 함수
   const onCommentChange = (e) => {
     setInputDataC(e.target.value);
-    console.log(inputDataC);
+    setNewInput({
+      value: e.target.value,
+      id: enters.length + 1,
+    });
     // 댓글 창의 value들을 inputDataC에 문자가 바뀔 때마다 할당
   };
   // inputDataC에 담긴 댓글 value를 빈 객체로 옮기고, 이 객체를 다시 배열에 넣어주기.
   const getCommentInput = (e) => {
     e.preventDefault(); // form 태그 새로고침 발생 X
-    setEnters(enters.concat([newInput])); // 배열에 객체 추가.
+    setEnters(enters.concat(newInput)); // 배열에 객체 추가.
     console.log(enters);
     setInputDataC("");
+  };
+
+  // 삭제 기능 구현
+  const deleteComment = (e) => {
+    // x 버튼을 클릭 시
+    // 전체 배열에서 그 id를 갖는 객체만 삭제
+    // 컴포넌트 이전에, 배열에 들어가기 이전에
+    console.log(e.target);
   };
 
   return (
@@ -129,7 +139,13 @@ function Detail() {
                   );
                 })}
                 {enters.map((comment) => {
-                  return <Comment content={comment.value} />;
+                  return (
+                    <Comment
+                      content={comment.value}
+                      key={comment.id}
+                      onClick={deleteComment}
+                    />
+                  );
                 })}
                 <form onSubmit={getCommentInput}>
                   <input
