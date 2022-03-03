@@ -46,6 +46,7 @@ function Detail() {
     setNewInput({
       value: e.target.value,
       id: enters.length + 1,
+      // 객체 내부 id 값은 전체 배열의 길이 + 1 로
     });
     // 댓글 창의 value들을 inputDataC에 문자가 바뀔 때마다 할당
   };
@@ -62,7 +63,9 @@ function Detail() {
     // x 버튼을 클릭 시
     // 전체 배열에서 그 id를 갖는 객체만 삭제
     // 컴포넌트 이전에, 배열에 들어가기 이전에
-    console.log(e.target);
+
+    console.log(e);
+    setEnters(enters.concat(newInput));
   };
 
   return (

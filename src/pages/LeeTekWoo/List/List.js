@@ -6,7 +6,7 @@ import Card from "./Card";
 function List() {
   const [cardList, setCardList] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/data/leetekwoo/PRODUCT_CARD{.json", {
+    fetch("http://localhost:3000/data/coffeeList.json", {
       method: "GET",
     })
       .then((res) => res.json()) // res.json() 역할이 무엇인지
@@ -28,11 +28,11 @@ function List() {
           </p>
         </div>
         <div className="coldBrewSet">
-          {cardList.map((card) => {
-            if (card.type === "Cold Brew")
-              return (
-                <Card name={card.name} imageURL={card.imageURL} key={card.id} />
-              );
+          {cardList["coldBrewCoffee"].map((card) => {
+            // if (card.type === "Cold Brew")//
+            return (
+              <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
+            );
           })}
         </div>
       </div>
@@ -46,12 +46,11 @@ function List() {
           </p>
         </div>
         <div className="brewedSet">
-          {cardList.map((card) => {
-            if (card.type === "Brewed Coffee") {
-              return (
-                <Card name={card.name} imageURL={card.imageURL} key={card.id} />
-              );
-            }
+          {cardList["brewedCoffee"].map((card) => {
+            // if (card.type === "Brewed Coffee") /
+            return (
+              <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
+            );
           })}
         </div>
       </div>
