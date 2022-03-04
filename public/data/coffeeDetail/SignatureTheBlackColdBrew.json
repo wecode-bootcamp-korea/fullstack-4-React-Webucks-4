@@ -1,0 +1,43 @@
+{
+    "id": "SignatureTheBlackColdBrew"
+    ,
+    "type":"Cold Brew Coffee"
+    ,
+    "name":"시그니처 더 블랙 콜드 브루"
+    ,
+    "imgUrl": "/images/SignatureTheBlackColdBrew.jpg"
+    ,
+    "englishName":"Signature The Black Cold Brew"
+    ,
+    "description":"콜드 브루 전용 원두를 차가운 물로 14시간 동안 추출하여 부드럽고 진한 풍미의 콜드브루를 딜리버리로 원하는 곳에서 편하게 즐겨보세요 (전용 리유저블 보틀 /500ml)"
+    ,
+    "size":"Bottle(보틀) / 500ml (17 fl oz)"
+    ,
+    "nutrition":
+    [{  "id":"1",
+        "name":"calorie",
+        "value":"25"
+    },
+    {  "id":"2",
+        "name":"natrium",
+        "value":"50"
+    },
+    {  "id":"3",
+        "name":"fat",
+        "value":"0"
+    },
+    {  "id":"4",
+        "name":"sugars",
+        "value":"0"
+    },
+    {  "id":"5",
+        "name":"protein",
+        "value":"0"
+    },
+    {  "id":"6",
+        "name":"caffeine",
+        "value":"680"
+    }]
+    ,
+    "allergyInfo":"없음"
+}

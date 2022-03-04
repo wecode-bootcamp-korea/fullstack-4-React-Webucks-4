@@ -1,37 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
-
 .List {
-  //header
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f6f5ef;
-
-    .title {
-      font-family: "Dancing Script", cursive;
-      font-weight: 700;
-      font-size: 30px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      font-size: 15px;
-
-      li {
-        padding-right: 10px;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-  }
-
-  // menu-title
   .section {
     .title {
       padding: 15px;
@@ -57,36 +25,6 @@
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 10px;
       margin: 10px;
-
-      li {
-        list-style: none;
-
-        div {
-          position: relative;
-          width: 100%;
-          padding-bottom: 100%;
-          overflow: hidden;
-
-          img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transition: all 0.3s linear;
-
-            &:hover {
-              transform: scale(1.1);
-            }
-          }
-        }
-
-        span {
-          display: inline-block;
-          width: 100%;
-          margin-top: 10px;
-          text-align: center;
-          font-size: 14px;
-        }
-      }
     }
   }
 }
