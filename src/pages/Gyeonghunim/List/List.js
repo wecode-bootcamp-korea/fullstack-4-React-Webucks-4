@@ -6,10 +6,8 @@ import TopNav from "../components/TopNav";
 import CoffeeCard from "../components/CoffeeCard";
 
 const ListGyeonghun = () => {
-
-
-    const [coffeeList, setCoffeeList] = useState({});
-
+    const [coffeeList, setCoffeeList] = useState({
+"coldBrewCoffee":[],"brewedCoffee":[]})
     useEffect(() => {
         fetch('/data/coffeeList.json', {
           method: 'GET' // GET method는 기본값이라서 생략이 가능합니다. 
@@ -20,32 +18,33 @@ const ListGyeonghun = () => {
           });
       },[])
 
-
   return     (
-  <div class="master-container">
+  <div className="master-container">
     <TopNav />
-  <article class="coffee-list-title">
+  <article className="coffee-list-title">
       <h1>콜드 부루 커피</h1>
-      <i class="fas fa-coffee"></i>
+      <i className="fas fa-coffee"></i>
       <h2>디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</h2>
   </article>
 
-  <ul class="coffee-list-wrapper">
-        {coffeeList.coldBrewCoffee.map(coffee =>{
-          return (<CoffeeCard coffeeName={coffee.name} imageUrl={coffee.imgUrl} />)
+  <ul className="coffee-list-wrapper">
+        {
+        coffeeList.coldBrewCoffee.map(coffee =>{
+          return (<CoffeeCard coffeeName={coffee.name} imageUrl={coffee.imgUrl} key={coffee.id} />)
         })}
   </ul>
 
 
-  <article class="coffee-list-title">
+  <article className="coffee-list-title">
       <h1>브루드 커피</h1>
-      <i class="fas fa-coffee"></i>
+      <i className="fas fa-coffee"></i>
       <h2>디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</h2>
   </article>
   
-  <ul class="coffee-list-wrapper">
-    {coffeeList.brewedCoffee.map(coffee =>{
-        return (<CoffeeCard coffeeName={coffee.name} imageUrl={coffee.imgUrl} />)
+  <ul className="coffee-list-wrapper">
+    {
+    coffeeList.brewedCoffee.map(coffee =>{
+        return (<CoffeeCard coffeeName={coffee.name} imageUrl={coffee.imgUrl} key={coffee.id}  />)
     })}
   </ul>
 </div>);

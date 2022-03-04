@@ -1,10 +1,10 @@
 import React from "react";
 const CoffeeCard = (props) => {
-  return (<li class="coffee-list">
-  <div class="coffee-image-box">
-      <img class="coffee-image" src={props.imageUrl} alt={props.coffeeName} />
+  return (<li className="coffee-list">
+  <div className="coffee-image-box">
+      <img className="coffee-image" src={props.imageUrl} alt={props.coffeeName} />
   </div>
-  <h3 class="coffee-name">
+  <h3 className="coffee-name">
       {props.coffeeName}
   </h3>
 </li>);

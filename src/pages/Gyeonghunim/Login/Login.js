@@ -1,51 +1,42 @@
 import React, { useState, useEffect }  from "react";
-import './Login.scss'
+import styles from'./Login.module.scss'
 import logoImage from '../resource/logo.png';
+import cx from "classnames";
 
 const LoginGyeonghun = () => {
   const [inputIdData, setInputIdData] = useState("");
   const [inputPwData, setInputPwData] = useState("");
-  const [buttonState, setButtonState] = useState(true);
-  const [buttonClassName, setbuttonClassName] = useState("login_button margin_top button_off");
-  
+  const [buttonState, setButtonState] = useState(false);
+
 function handleIdInput(event){
   setInputIdData(event.target.value)
-  if(inputPwData.length>4&&event.target.value.indexOf("@")!=-1){
-    setButtonState(true)
-    setbuttonClassName("login_button margin_top button_on")
-    }else{
-      setButtonState(false)
-      setbuttonClassName("login_button margin_top button_off")
-    }
+  setLoginButton(event.target.value,inputPwData);
 }
-
 function handlePwInput(event){
   setInputPwData(event.target.value)
-  if(event.target.value.length>4&&inputIdData.indexOf("@")!=-1){
-    setButtonState(true)
-    setbuttonClassName("login_button margin_top button_on")
-    }else{
-      setButtonState(false)
-      setbuttonClassName("login_button margin_top button_off")
-    }
+  setLoginButton(inputIdData,event.target.value);
 }
 
+function setLoginButton(id,pw){
+if(id.indexOf("@")!=-1&&pw.length>4){
+  setButtonState(true)
+}else
+{
+  setButtonState(false)
+}
+}
 
-
-function hey(){
-
+function testLoginButton(){
   console.log("hey")
 }
 
-
-
   return (
-  <div className="login_case"><img className="logo" src={logoImage} />
+  <div className={styles.login_case}><img className={styles.logo} src={logoImage} />
       <form action="/examples/media/action_target.php">
-        <input onChange={handleIdInput} type="text" id="idInput" className="login_id margin_top" placeholder="전화번호, 사용자 이름 또는 이메일" /><br />
-        <input onChange={handlePwInput} type="password" id="pwInput" className="login_password margin_top" placeholder="비밀번호" /><br />
-        <button className={buttonClassName} type="button" disabled={buttonState} onClick={hey}>로그인</button>
-        <p className="question">비밀번호를 잊으셨나요?</p>
+        <input onChange={handleIdInput} type="text" id="idInput" className={styles.login_id+" "+styles.margin_top} placeholder="전화번호, 사용자 이름 또는 이메일" /><br />
+        <input onChange={handlePwInput} type="password" id="pwInput" className={styles.login_password+" "+styles.margin_top} placeholder="비밀번호" /><br />
+        <button className={cx(styles.login_button,styles.margin_top,{[styles.button_off] : !buttonState},{[styles.button_on] : buttonState})} type="button" disabled={!buttonState} onClick={testLoginButton}>로그인</button>
+        <p className={styles.question}>비밀번호를 잊으셨나요?</p>
     </form>
   </div>
   );
