@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import Card from './Card'
 // import TopNav from '../../components/TopNav/TopNav'
 // import Footer from '../../components/Footer/Footer'
 import './List.scss'
 
 function List() {
-    const [ coffeList, setCoffeeList ] = useState({
+    const [ coffeeList, setCoffeeList ] = useState({
         coldBrewCoffee: [],
         brewedCoffee: [],
       })
@@ -30,7 +29,7 @@ function List() {
                     <span className="article__smalltitle">디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
                 </p>
                 <article className='article'>
-                    {coffeList["coldBrewCoffee"].map(coffee => {
+                    {coffeeList["coldBrewCoffee"].map(coffee => {
                         return (
                             <Card
                                 key={coffee.id}
@@ -45,7 +44,7 @@ function List() {
                     <span className="article__smalltitle">디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
                 </p>
                 <article className='article'>
-                    {coffeList == false ? null : coffeList["brewedCoffee"].map(coffee => {
+                    {coffeeList == false ? null : coffeeList["brewedCoffee"].map(coffee => {
                         return (
                             <Card
                                 key={coffee.id}

@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import TopNav from '../../components/TopNav/TopNav'
 // import Footer from '../../components/Footer/Footer'
 import './Detail.scss'
 
 function Detail() {
+    const [ coffeeDetail, setCoffeeDetail ] = useState({})
+
+    useEffect(() => {
+        // fetch할 파일 이름을 어디서 받아 오는지..?
+      fetch('http://localhost:3000/data/coffeeDetail/BrewedCoffee.json', {
+          method: 'GET'
+      })
+        .then(res => res.json())
+        .then(data => {
+            data.isLiked = false
+            setCoffeeDetail(data)
+        })
+    }, [])
+
+    function handleLiked() {
+        !coffeeDetail.isLiked ?
+        setCoffeeDetail({...coffeeDetail, isLiked:true})
+        : setCoffeeDetail({...coffeeDetail, isLiked:false})
+    }
+    
   return (
     <div>
         {/* <TopNav /> */}
@@ -20,7 +40,7 @@ function Detail() {
                             <div className="coffeeDetails__title">화이트 초콜릿 모카</div>
                             <div className="coffeeDetails__smalltitle">White Chocolate Mocha</div>
                         </div>
-                        <i className="fas fa-heart"></i>
+                        <i className={`fas fa-heart ${ coffeeDetail.isLiked ? 'liked': '' }`} onClick={handleLiked}></i>
                     </div>
                     <hr className="coffeeDetails__line" />
                     <p className="coffeeDetails__description">달콤하고 부드러운 화이트 초콜릿 시럽과 에스프레소를 스팀 밀크와 섞어 휘핑크림으로 마무리한 음료로 달콤함과 강렬한 에스프레소가 부드럽게 어우러진 커피</p>
