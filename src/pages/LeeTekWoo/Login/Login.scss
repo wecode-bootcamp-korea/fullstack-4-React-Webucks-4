@@ -1,11 +1,12 @@
+@import "../../../styles/variables.scss";
+
 .bodyLogin {
   background-color: #eeefef;
   height: 100vh;
 }
 
 .backgroundLogin {
-  display: flex;
-  justify-content: center;
+  @include flexCenter;
 }
 .containerLogin {
   display: flex;

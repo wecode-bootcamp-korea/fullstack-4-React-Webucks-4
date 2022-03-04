@@ -1,0 +1,19 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  height: 20%;
+  padding: 2%;
+  background-color: #383838;
+  color: #ffffff;
+
+
+.footerTitle {
+  margin-bottom: 1rem;
+}
+
+footer p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: small;
+  font-weight: 500;
+}
+}

@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./List.scss";
 import TopsNav from "../TopsNav/TopsNav";
 import Card from "./Card";
 
 function List() {
-  const [cardList, setCardList] = useState([]);
+  const [cardList, setCardList] = useState({
+    coldBrewCoffee: [],
+    brewedCoffee: [],
+  });
 
   useEffect(() => {
     fetch("http://localhost:3000/data/coffeeList.json", {
       method: "GET",
     })
-      .then((res) => res.json()) // res.json() 역할이 무엇인지
+      .then((res) => res.json())
+
       .then((data) => {
         setCardList(data);
       });
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div className="listBody">
@@ -29,16 +36,18 @@ function List() {
           </p>
         </div>
         <div className="coldBrewSet">
-          {console.log(cardList == undefined)}
-
-          {cardList == 0
-            ? null
-            : cardList["coldBrewCoffee"].map((card) => {
-                console.log(card);
-                return (
-                  <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
-                );
-              })}
+          {cardList.coldBrewCoffee.map((card) => {
+            return (
+              <Card
+                name={card.name}
+                imageURL={card.imgUrl}
+                key={card.id}
+                onClick={() => {
+                  navigate("/coffee/" + card.id);
+                }}
+              />
+            );
+          })}
         </div>
       </div>
       <div className="content">
@@ -51,13 +60,18 @@ function List() {
           </p>
         </div>
         <div className="brewedSet">
-          {cardList == 0
-            ? null
-            : cardList["brewedCoffee"].map((card) => {
-                return (
-                  <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
-                );
-              })}
+          {cardList.brewedCoffee.map((card) => {
+            return (
+              <Card
+                name={card.name}
+                imageURL={card.imgUrl}
+                key={card.id}
+                onClick={() => {
+                  navigate("/coffee/" + card.id);
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

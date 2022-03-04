@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.scss";
+import "../../../styles/variables.scss";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -77,7 +78,7 @@ function Login() {
 
   const goToList = () => {
     if (logActive) {
-      navigate("/list");
+      navigate("/coffee");
     }
   };
 
