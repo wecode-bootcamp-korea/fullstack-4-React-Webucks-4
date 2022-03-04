@@ -5,8 +5,9 @@ import Card from "./Card";
 
 function List() {
   const [cardList, setCardList] = useState([]);
+
   useEffect(() => {
-    fetch("/data/coffeeList.json", {
+    fetch("http://localhost:3000/data/coffeeList.json", {
       method: "GET",
     })
       .then((res) => res.json()) // res.json() 역할이 무엇인지
@@ -28,9 +29,12 @@ function List() {
           </p>
         </div>
         <div className="coldBrewSet">
+          {console.log(cardList == undefined)}
+
           {cardList == 0
-            ? null // 너무 불필요하다.
+            ? null
             : cardList["coldBrewCoffee"].map((card) => {
+                console.log(card);
                 return (
                   <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
                 );
@@ -47,11 +51,13 @@ function List() {
           </p>
         </div>
         <div className="brewedSet">
-          {/* {cardList["brewedCoffee"].map((card) => {
-            return (
-              <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
-            );
-          })} */}
+          {cardList == 0
+            ? null
+            : cardList["brewedCoffee"].map((card) => {
+                return (
+                  <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
+                );
+              })}
         </div>
       </div>
     </div>

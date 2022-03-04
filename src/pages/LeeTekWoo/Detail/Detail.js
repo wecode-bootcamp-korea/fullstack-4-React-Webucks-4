@@ -23,7 +23,6 @@ function Detail() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setComment(data);
       });
   }, []);
