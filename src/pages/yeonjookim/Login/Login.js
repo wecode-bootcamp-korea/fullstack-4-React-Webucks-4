@@ -6,27 +6,29 @@ import './Login.scss'
 function Login() {
     const navigate = useNavigate()
     
-    const [input, setinput] = useState({
+    const [input, setInput] = useState({
         id: '',
-        pw: ''
+        pw: '',
+        isValid: false
     })
 
-    function handleIdInput(event) {
-        setinput({...input, id:event.target.value})
-    }
-
-    function handlePwInput(event) {
-        setinput({...input, pw:event.target.value})
-    }
-
-    const valCheck = () => {
-        if (this.state.id.include('@') && this.state.pw.length > 7) {
-            console.log("Hi!")
+    function valCheck () {
+        if (input.id.includes('@') && input.pw.length>=5) {
+            setInput({...input, isValid:true})
         }
     }
 
+    function handleIdInput(event) {
+        setInput({...input, id:event.target.value})
+        valCheck()
+    }
+
+    function handlePwInput(event) {
+        setInput({...input, pw:event.target.value})
+        valCheck()
+    }
+
     function enter() {
-        // if (inputValue.id.includes('@') && inputValue.pw.length >= 8) {
         navigate("/List-yeonjoo")
     }
 
@@ -39,7 +41,7 @@ function Login() {
                     {/* <input name="id" onChange={valCheck} value={id} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" required /> */}
                     <input className="login__input" type="password" placeholder="비밀번호" onChange={handlePwInput} required />
                     {/* <input name="pw" onChange={valCheck} value={pw} type="password" placeholder="비밀번호" required /> */}
-                    <button className="login__btn" onClick={enter} >로그인</button>
+                    <button className={`login__btn ${input.isValid? 'active' : ''}`} onClick={enter} >로그인</button>
                 </div>
                 <Link to="/signup">비밀번호를 잊으셨나요?</Link>
             </div>
