@@ -6,8 +6,18 @@ import './Login.scss'
 function Login() {
     const navigate = useNavigate()
     
-    const [id, setid] = useState('')
-    const [pw, setpw] = useState('')
+    const [input, setinput] = useState({
+        id: '',
+        pw: ''
+    })
+
+    function handleIdInput(event) {
+        setinput({...input, id:event.target.value})
+    }
+
+    function handlePwInput(event) {
+        setinput({...input, pw:event.target.value})
+    }
 
     const valCheck = () => {
         if (this.state.id.include('@') && this.state.pw.length > 7) {
@@ -25,9 +35,9 @@ function Login() {
             <div className="login__container">
                 <img className="webucks__logo" src='./images/yeonjookim/webucks_logo.svg' alt="webucks_logo" />
                 <div className="login__box">
-                    <input className="login__input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" value={id} onChange={(e) => {setid(e.target.value); valCheck();}} required />
+                    <input className="login__input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={handleIdInput} required />
                     {/* <input name="id" onChange={valCheck} value={id} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" required /> */}
-                    <input className="login__input" type="password" placeholder="비밀번호" value={pw} onChange={(e) => {setpw(e.target.value); valCheck();}} required />
+                    <input className="login__input" type="password" placeholder="비밀번호" onChange={handlePwInput} required />
                     {/* <input name="pw" onChange={valCheck} value={pw} type="password" placeholder="비밀번호" required /> */}
                     <button className="login__btn" onClick={enter} >로그인</button>
                 </div>
