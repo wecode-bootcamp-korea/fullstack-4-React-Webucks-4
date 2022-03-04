@@ -6,14 +6,14 @@ import Card from "./Card";
 function List() {
   const [cardList, setCardList] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/data/coffeeList.json", {
+    fetch("/data/coffeeList.json", {
       method: "GET",
     })
       .then((res) => res.json()) // res.json() 역할이 무엇인지
       .then((data) => {
         setCardList(data);
       });
-  });
+  }, []);
 
   return (
     <div className="listBody">
@@ -28,12 +28,13 @@ function List() {
           </p>
         </div>
         <div className="coldBrewSet">
-          {cardList["coldBrewCoffee"].map((card) => {
-            // if (card.type === "Cold Brew")//
-            return (
-              <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
-            );
-          })}
+          {cardList == 0
+            ? null // 너무 불필요하다.
+            : cardList["coldBrewCoffee"].map((card) => {
+                return (
+                  <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
+                );
+              })}
         </div>
       </div>
       <div className="content">
@@ -46,12 +47,11 @@ function List() {
           </p>
         </div>
         <div className="brewedSet">
-          {cardList["brewedCoffee"].map((card) => {
-            // if (card.type === "Brewed Coffee") /
+          {/* {cardList["brewedCoffee"].map((card) => {
             return (
               <Card name={card.name} imageURL={card.imgUrl} key={card.id} />
             );
-          })}
+          })} */}
         </div>
       </div>
     </div>

@@ -23,6 +23,7 @@ function Detail() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setComment(data);
       });
   }, []);
@@ -45,8 +46,9 @@ function Detail() {
     setInputDataC(e.target.value);
     setNewInput({
       value: e.target.value,
-      id: enters.length + 1,
+      // id: enters.length + 1,
       // 객체 내부 id 값은 전체 배열의 길이 + 1 로
+      // 삭제 기능 구현 시 id 값 겹침 우려있음
     });
     // 댓글 창의 value들을 inputDataC에 문자가 바뀔 때마다 할당
   };
@@ -143,11 +145,7 @@ function Detail() {
                 })}
                 {enters.map((comment) => {
                   return (
-                    <Comment
-                      content={comment.value}
-                      key={comment.id}
-                      onClick={deleteComment}
-                    />
+                    <Comment content={comment.value} onClick={deleteComment} />
                   );
                 })}
                 <form onSubmit={getCommentInput}>
