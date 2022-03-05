@@ -4,14 +4,16 @@ import "./footer.scss";
 function footer() {
   return (
     <footer>
-      <div className="footerNav">
-        <p className="footerTitle">COMPANY</p>
-        <p>한눈에 보기</p>
-        <p>위벅스 사명</p>
-        <p>위벅스 소개</p>
-        <p>국내 뉴스룸</p>
-        <p>세계의 위벅스</p>
-        <p>글로벌 뉴스룸</p>
+      <div>
+        <div className="footerTitle" id="mobileFooter">
+          <p>COMPANY</p>
+          <p>한눈에 보기</p>
+          <p>위벅스 사명</p>
+          <p>위벅스 소개</p>
+          <p>국내 뉴스룸</p>
+          <p>세계의 위벅스</p>
+          <p>글로벌 뉴스룸</p>
+        </div>
       </div>
       <div className="footerNav">
         <p className="footerTitle">CORPORATE SALES</p>

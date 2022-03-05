@@ -1,4 +1,17 @@
 footer {
+  @media (max-width: 900px) {
+    .footerNav {
+      display: none;
+    }
+    #mobileFooter {
+      display: flex;
+      p {
+        width: 100%;
+        margin: 0 2%;
+        font-size: xx-small;
+      }
+    }
+  }
   display: flex;
   justify-content: space-around;
   height: 20%;
@@ -6,14 +19,13 @@ footer {
   background-color: #383838;
   color: #ffffff;
 
+  .footerTitle {
+    margin-bottom: 1rem;
+  }
 
-.footerTitle {
-  margin-bottom: 1rem;
-}
-
-footer p {
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: small;
-  font-weight: 500;
-}
+  p {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: small;
+    font-weight: 500;
+  }
 }

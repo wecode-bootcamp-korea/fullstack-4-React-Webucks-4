@@ -31,7 +31,7 @@ function Detail() {
       .then((data) => {
         setDetailInfo(data);
       });
-  }, []);
+  });
 
   const [heart, setHeart] = React.useState("fa-regular fa-heart");
   const ChangeHeart = () => {
