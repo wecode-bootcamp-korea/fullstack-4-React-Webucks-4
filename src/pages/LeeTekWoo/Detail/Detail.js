@@ -124,7 +124,7 @@ function Detail() {
       <div className="wholePage">
         <TopsNav />
         <h1 className="sectionTitle">{detailInfo.name}</h1>
-        <p className="toList" onClick={() => navigate("/coffee")}>
+        <p className="toList" onClick={() => navigate("/tekwoo/coffee")}>
           {`홈 > MENU > 음료 > ${detailInfo.name}`}
         </p>
 

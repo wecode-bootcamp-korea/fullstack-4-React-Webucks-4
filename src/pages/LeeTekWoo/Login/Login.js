@@ -85,12 +85,12 @@ function Login() {
 
   const goToList = () => {
     if (logActive) {
-      navigate("/coffee");
+      navigate("/tekwoo/coffee");
     }
   };
 
   const goToSignup = () => {
-    navigate("/signup");
+    navigate("/");
   };
 
   return (

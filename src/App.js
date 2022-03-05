@@ -7,6 +7,7 @@ import "./styles/variables.scss";
 import Login from "./pages/LeeTekWoo/Login/Login.js";
 import List from "./pages/LeeTekWoo/List/List.js";
 import Detail from "./pages/LeeTekWoo/Detail/Detail";
+import Landing from "./Landing";
 
 // // 민지's 컴포넌트
 // import LoginMinji from "./pages/minjiKong/Login/Login";
@@ -37,9 +38,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/coffee" element={<List />} />
-        <Route path="/coffee/:id" element={<Detail />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/login-tekwoo" element={<Login />} />
+        <Route path="/tekwoo/coffee" element={<List />} />
+        <Route path="/tekwoo/coffee/:id" element={<Detail />} />
         {/* 
         <Route path="/login-minji" element={<LoginMinji />} />
         <Route path="/list-minji" element={<ListMinji />} />

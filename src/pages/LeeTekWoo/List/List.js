@@ -42,7 +42,7 @@ function List() {
               imageURL={card.imgUrl}
               key={card.id}
               onClick={() => {
-                navigate(`/coffee/${card.id}`);
+                navigate(`/tekwoo/coffee/${card.id}`);
               }}
             />
           );
@@ -65,7 +65,7 @@ function List() {
               imageURL={card.imgUrl}
               key={card.id}
               onClick={() => {
-                navigate(`/coffee/${card.id}`);
+                navigate(`/tekwoo/coffee/${card.id}`);
               }}
             />
           );
