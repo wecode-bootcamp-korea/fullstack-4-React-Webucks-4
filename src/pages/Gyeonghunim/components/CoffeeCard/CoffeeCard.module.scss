@@ -1,0 +1,21 @@
+.coffee-image-box{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.coffee-image:hover{
+    transform: scale(1.1);
+}
+
+.coffee-image{
+    transition: .5s;
+}
+
+.coffee-name{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}

@@ -1,0 +1,163 @@
+*{
+    box-sizing:border-box;
+ 
+  }
+ 
+ html {
+    height: 100%;
+   background-color: rgb(255, 255, 255);
+ }
+body{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+ }
+.master-container{
+    width: 899px;
+    }
+
+.categoryTitle{
+font-weight: bold;
+font-size: 25px;
+}
+.hierarchyText{
+    color: gray;
+    text-align: right;
+    font-size: 12px;
+    }
+
+
+.contentsWrapper{
+    
+    width: 100%;
+display: flex;
+justify-content:flex-start;
+    }
+
+
+.coffeeTitleWrapper{
+
+}
+.description{
+    font-size: 13px;
+}
+.bottomMargin{
+    margin-bottom: 10px;
+}
+
+.topMargin{
+    margin-top: 30px;
+}
+
+.translucent{
+opacity: 0.2;
+}
+
+
+ .coffeeTitle{
+    font-weight: bold;
+    font-size: 20px;
+
+ }   
+ .coffeeTitleEn{
+    font-weight: bold;
+    font-size: 11px;
+
+ }   
+.coffeeImageWrapper{
+    flex: 10;
+    margin: 0 30px 0 0;
+            }
+.coffeeImage{
+    width: 100%;
+    }
+.coffeeDataWrapper{
+        flex: 13;
+            }
+
+.blackColorBar{
+    background-color: black;
+    height: 1px;
+}
+
+.bbb{
+    display: flex;
+    align-items: center;
+    border:1px solid;
+}
+
+.nutritionTitleWrapper{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  padding: 20px;
+  font-size: 13px;
+
+}
+
+.nutritionWrapper{
+padding: 0 20px 0 20px;
+}
+.nutritionDataRow{
+    flex:10;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.nutritionDataWrapper{
+    font-size: 14px;
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+
+}
+.blackVerticalBar{
+
+background-color: rgb(122, 122, 122);
+width: 1px;
+margin: 0 10px 0 10px;
+}
+
+.flexSpaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.allergyInfoBox{
+background-color: rgb(236, 236, 236);
+padding: 10px;
+font-size: 13px;
+}
+
+
+.reviewTitle{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.reviewWrapper{
+
+
+
+}
+.reviewTextField{
+
+width: 100%;
+background-color: rgb(236, 236, 236);
+border: 0;
+padding: 5px;
+font-size: 13px;
+margin-top: 10px;
+    
+}
+
+.reviewList{
+
+}
+
+

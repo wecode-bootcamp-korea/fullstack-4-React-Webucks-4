@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import './List.scss'
+import styles from'./List.module.scss'
 
 
-import TopNav from "../components/TopNav";
-import CoffeeCard from "../components/CoffeeCard";
+import TopNav from "../components/TopNav/TopNav";
+import CoffeeCard from "../components/CoffeeCard/CoffeeCard";
 
-const ListGyeonghun = () => {
+const List = () => {
     const [coffeeList, setCoffeeList] = useState({
 "coldBrewCoffee":[],"brewedCoffee":[]})
+
     useEffect(() => {
         fetch('/data/coffeeList.json', {
           method: 'GET' // GET method는 기본값이라서 생략이 가능합니다. 
@@ -19,35 +20,35 @@ const ListGyeonghun = () => {
       },[])
 
   return     (
-  <div className="master-container">
+  <div className={styles["master-container"]}>
     <TopNav />
-  <article className="coffee-list-title">
+  <article className={styles["coffee-list-title"]}>
       <h1>콜드 부루 커피</h1>
       <i className="fas fa-coffee"></i>
       <h2>디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</h2>
   </article>
 
-  <ul className="coffee-list-wrapper">
+  <ul className={styles["coffee-list-wrapper"]}>
         {
         coffeeList.coldBrewCoffee.map(coffee =>{
-          return (<CoffeeCard coffeeName={coffee.name} imageUrl={coffee.imgUrl} key={coffee.id} />)
+          return (<CoffeeCard coffeeName={coffee.name} imageUrl={coffee.imgUrl} id={coffee.id} key={coffee.id} />)
         })}
   </ul>
 
 
-  <article className="coffee-list-title">
+  <article className={styles["coffee-list-title"]}>
       <h1>브루드 커피</h1>
       <i className="fas fa-coffee"></i>
       <h2>디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</h2>
   </article>
   
-  <ul className="coffee-list-wrapper">
+  <ul className={styles["coffee-list-wrapper"]}>
     {
     coffeeList.brewedCoffee.map(coffee =>{
-        return (<CoffeeCard coffeeName={coffee.name} imageUrl={coffee.imgUrl} key={coffee.id}  />)
+        return (<CoffeeCard coffeeName={coffee.name} imageUrl={coffee.imgUrl} id={coffee.id} key={coffee.id}  />)
     })}
   </ul>
 </div>);
 };
 
-export default ListGyeonghun;
+export default List;

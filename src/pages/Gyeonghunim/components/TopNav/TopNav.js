@@ -1,6 +1,6 @@
 import React from "react";
-import logoImage from '../resource/logo.png';
-
+import logoImage from '../../resource/logo.png';
+import styles from'./TopNav.module.scss'
 const TopNav = () => {
   return (<nav>
   <img src={logoImage} alt="logo" width="60px" />
