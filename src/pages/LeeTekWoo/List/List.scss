@@ -29,6 +29,10 @@
     .coldBrewSet,
     .brewedSet {
       grid-template-columns: repeat(3, 0fr);
+      img {
+        width: 30vw;
+        height: 30vw;
+      }
     }
   }
 }

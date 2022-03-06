@@ -98,7 +98,7 @@ function Login() {
       <div className="backgroundLogin">
         <section className="containerLogin">
           <img src="/images/leetekwoo/webucksLogo.jpg" alt="logo" />
-          <form className="containLogin" onChange={setLogin}>
+          <form className="containLogin" onKeyUp={setLogin}>
             <input
               type="text"
               className="Input id"
