@@ -48,7 +48,7 @@ function App() {
          */}
         <Route path="/login-yeonjoo" element={<LoginYeonjoo />} />
         <Route path="/list-yeonjoo" element={<ListYeonjoo />} />
-        <Route path="/detail-yeonjoo" element={<DetailYeonjoo />} />
+        <Route path="/detail-yeonjoo/:id" element={<DetailYeonjoo />} />
 
         {/* <Route path="/Login-ChaeWon" element={<LoginChaeWon />} />
         <Route path="/List-ChaeWon" element={<ListChaeWon />} />

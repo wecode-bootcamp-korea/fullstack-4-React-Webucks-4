@@ -1,4 +1,7 @@
 
+.main {
+    padding: 0 100px;
+}
 
 .article__title {
     display: flex;
@@ -7,7 +10,7 @@
     margin: 20px 0 30px 0;
     background-color: bisque;
     font-weight: bold;
-    text-indent: 4px;
+    text-indent: 4px;    
 }
 
 .article__title__icon {
@@ -40,15 +43,15 @@
 }
 
 .img__frame {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     margin-bottom: 6px;
     overflow: hidden;
 }
 
 .img__content {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     transition: transform 3s ease-in-out;
 }
 

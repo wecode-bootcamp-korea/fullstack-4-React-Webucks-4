@@ -1,0 +1,29 @@
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: gray;
+    color: whitesmoke;;
+}
+
+.footer li {
+    padding: 4px;
+    list-style: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer li {
+        display: none;
+    }
+}   

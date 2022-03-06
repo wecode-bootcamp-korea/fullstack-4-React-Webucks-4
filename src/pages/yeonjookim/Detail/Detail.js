@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react'
-// import TopNav from '../../components/TopNav/TopNav'
-// import Footer from '../../components/Footer/Footer'
-import './Detail.scss'
+import { useParams } from 'react-router-dom'
+import TopNav from '../Components/TopNav/TopNav'
+import Footer from '../Components/Footer/Footer'
+import styles from './Detail.module.scss'
+import Review from './Review.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+
 
 function Detail() {
+    const params = useParams()
     const [ coffeeDetail, setCoffeeDetail ] = useState({})
+    const [ newReview, setNewReview ] = useState([])
 
     useEffect(() => {
-        // fetch할 파일 이름을 어디서 받아 오는지..?
-      fetch('http://localhost:3000/data/coffeeDetail/BrewedCoffee.json', {
+      fetch(`http://localhost:3000/data/coffeeDetail/${params.id}.json`, {
           method: 'GET'
       })
         .then(res => res.json())
@@ -23,90 +29,106 @@ function Detail() {
         setCoffeeDetail({...coffeeDetail, isLiked:true})
         : setCoffeeDetail({...coffeeDetail, isLiked:false})
     }
+
+    function handleAddReview(e) {
+        if (e.key === 'Enter') {
+            setNewReview([...newReview, {id:'newbie', text: e.target.value}])
+            e.target.value = ''
+        }
+    }
     
   return (
     <div>
-        {/* <TopNav /> */}
+        <TopNav />
         <main>
-            <section className="detail">
-                <div className="detail__title">콜드 브루</div>
-                <div className="detail__path">홈&gt;MENU&gt;음료&gt;에스프레소&gt;화이트 초콜릿 모카</div>
+            <section className={styles.detail}>
+                <div className={styles.detail__title}>{String(coffeeDetail.type).startsWith('Cold') ? `콜드 브루 커피` : `브루드 커피`}</div>
+                <div className={styles.detail__path}>홈&gt;MENU&gt;음료&gt;{coffeeDetail.type}&gt;{coffeeDetail.name}</div>
             </section>
-            <article className='detail__article'>
-                <img className='detail__img' src="./images/yeonjookim/demi-deherrera-L-sm1B4L1Ns-unsplash.jpg" alt="big_coffee" />
-                <div className="article__content">
-                    <div className="coffeeDetails">
-                        <div className="coffeeDetails__titleBox">
-                            <div className="coffeeDetails__title">화이트 초콜릿 모카</div>
-                            <div className="coffeeDetails__smalltitle">White Chocolate Mocha</div>
+            <article className={styles.detail__article}>
+                <img className={styles.detail__img} src={coffeeDetail.imgUrl} alt="coffee_detail" />
+                <div className={styles.article__content}>
+                    <div className={styles.coffeeDetails}>
+                        <div className={styles.coffeeDetails__titleBox}>
+                            <div className={styles.coffeeDetails__title}>{coffeeDetail.name}</div>
+                            <div className={styles.coffeeDetails__smalltitle}>{coffeeDetail.englishName}</div>
                         </div>
-                        <i className={`fas fa-heart ${ coffeeDetail.isLiked ? 'liked': '' }`} onClick={handleLiked}></i>
+                        <FontAwesomeIcon icon={faHeart} className={`${styles.fas} ${coffeeDetail.isLiked ? styles.liked : ''}`} onClick={handleLiked} />
                     </div>
-                    <hr className="coffeeDetails__line" />
-                    <p className="coffeeDetails__description">달콤하고 부드러운 화이트 초콜릿 시럽과 에스프레소를 스팀 밀크와 섞어 휘핑크림으로 마무리한 음료로 달콤함과 강렬한 에스프레소가 부드럽게 어우러진 커피</p>
+                    <hr className={styles.coffeeDetails__line} />
+                    <p className={styles.coffeeDetails__description}>{coffeeDetail.description}</p>
                     <hr />
-                    <div className="coffeeDetails__container__nutrition">
+                    <div className={styles.coffeeDetails__container__nutrition}>
                         <div>제품 영양 정보</div>
-                        <div>Tall(톨) / 355ml (12 fl oz)</div>
+                        <div>{coffeeDetail.size}</div>
                     </div>
                     <hr />
 
-                    <div className="container__nutrition__info">
-                        <div className="nutrition__info__left">
-                            <div className="nutrition__info__col1">
+                    <div className={styles.container__nutrition__info}>
+                        <div className={styles.nutrition__info__left}>
+                            <div className={styles.nutrition__info__col1}>
                                 <div>1회 제공량 (kcal)</div>
                                 <div>포화지방 (g)</div>
                                 <div>단백질 (g)</div>
                                 <br/>
                             </div>
-                            <div className="nutrition__info__col2">
-                                <div className="txtRight">345</div>
-                                <div className="txtRight">11</div>
-                                <div className="txtRight">11</div>
+                            <div className={styles.nutrition__info__col2}>
+                                <div className={styles.txtRight}>{coffeeDetail.nutrition? coffeeDetail.nutrition[0].value : `No info`}</div>
+                                <div className={styles.txtRight}>{coffeeDetail.nutrition? coffeeDetail.nutrition[1].value : `No info`}</div>
+                                <div className={styles.txtRight}>{coffeeDetail.nutrition? coffeeDetail.nutrition[2].value : `No info`}</div>
                                 <br/>
                             </div>
                         </div>
-                        <div className="nutrition__info__right">
-                            <div className="nutrition__info__col3">
+                        <div className={styles.nutrition__info__right}>
+                            <div className={styles.nutrition__info__col3}>
                                 <div>나트륨 (mg)</div>
                                 <div>당류 (g)</div>
                                 <div>카페인 (mg)</div>
                                 <br/>
                             </div>
-                            <div className="nutrition__info__col4">
-                                <div className="txtRight">150</div>
-                                <div className="txtRight">35</div>
-                                <div className="txtRight">75</div>
+                            <div className={styles.nutrition__info__col4}>
+                                <div className={styles.txtRight}>{coffeeDetail.nutrition? coffeeDetail.nutrition[3].value : `No info`}</div>
+                                <div className={styles.txtRight}>{coffeeDetail.nutrition? coffeeDetail.nutrition[4].value : `No info`}</div>
+                                <div className={styles.txtRight}>{coffeeDetail.nutrition? coffeeDetail.nutrition[5].value : `No info`}</div>
                                 <br/>
                             </div>
                         </div>
                     </div>
                         
 
-                    <div className="coffeeDetails__allergy">알레르기 유발 요인: 우유</div>
+                    <div className={styles.coffeeDetails__allergy}>알레르기 유발 요인: {coffeeDetail.allergyInfo}</div>
                     <review>
-                        <div className="review__title">리뷰</div>
+                        <div className={styles.review__title}>리뷰</div>
                         <hr />
-                        <div className="review">
-                            <div className="review__oneline">
-                                <span className="review__id">coffee_lover</span>
-                                <span className="review__text">너무 맛있어요!</span>
+                        <div className={styles.review}>
+                            <div className={styles.review__oneline}>
+                                <span className={styles.review__id}>coffee_lover</span>
+                                <span className={styles.review__text}>너무 맛있어요!</span>
                             </div>
                             <div>
-                                <span className="review__id">CHOCO7</span>
-                                <span className="review__text">오늘도 화이트 초콜릿 모카를 마시러 갑니다.</span>
+                                <span className={styles.review__id}>CHOCO7</span>
+                                <span className={styles.review__text}>오늘도 {coffeeDetail.name}를 마시러 갑니다.</span>
                             </div>
                             <div>
-                                <span className="review__id">legend_dev</span>
-                                <span className="review__text">진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초코 너무 달아서 머리 아파요...</span>
+                                <span className={styles.review__id}>legend_dev</span>
+                                <span className={styles.review__text}>진짜 {coffeeDetail.name}는 전설이다. 진짜 {coffeeDetail.name}는 전설이다. 진짜 {coffeeDetail.name}는 전설이다. 진짜 화이트 초코 너무 달아서 머리 아파요...</span>
+                            </div>
+                            <div>
+                                {newReview && newReview.map(review => {
+                                    return(
+                                        <Review 
+                                            id={review.id}
+                                            text={review.text}
+                                        />
+                                )})}
                             </div>
                         </div>
-                        <input className="review__input" type="text" placeholder="리뷰를 입력해주세요." />
+                        <input className={styles.review__input} type="text" onKeyUp={handleAddReview} placeholder="리뷰를 입력해주세요." />
                     </review>
                 </div>
             </article>
         </main>
-        {/* <Footer /> */}
+        <Footer />
     </div>
   )
 }

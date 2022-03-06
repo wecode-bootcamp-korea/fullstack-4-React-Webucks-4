@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
-import './Login.scss'
+import styles from './Login.module.scss'
 // import { SiStarbucks } from 'react-icons/si'
 
 function Login() {
@@ -33,15 +33,13 @@ function Login() {
     }
 
     return (
-        <div className="container">
-            <div className="login__container">
-                <img className="webucks__logo" src='./images/yeonjookim/webucks_logo.svg' alt="webucks_logo" />
-                <div className="login__box">
-                    <input className="login__input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={handleIdInput} required />
-                    {/* <input name="id" onChange={valCheck} value={id} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" required /> */}
-                    <input className="login__input" type="password" placeholder="비밀번호" onChange={handlePwInput} required />
-                    {/* <input name="pw" onChange={valCheck} value={pw} type="password" placeholder="비밀번호" required /> */}
-                    <button className={`login__btn ${input.isValid? 'active' : ''}`} onClick={enter} >로그인</button>
+        <div className={styles.container}>
+            <div className={styles.login__container}>
+                <img className={styles.webucks__logo} src='./images/yeonjookim/webucks_logo.svg' alt="webucks_logo" />
+                <div className={styles.login__box}>
+                    <input className={styles.login__input} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={handleIdInput} required />
+                    <input className={styles.login__input} type="password" placeholder="비밀번호" onChange={handlePwInput} required />
+                    <button className={`${styles.login__btn} ${input.isValid? styles.active : ''}`} disabled={input.isValid? false : true} onClick={enter} >로그인</button>
                 </div>
                 <Link to="/signup">비밀번호를 잊으셨나요?</Link>
             </div>
