@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.scss";
+import login from "./Login.module.scss";
 import "../../../styles/variables.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -94,36 +94,42 @@ function Login() {
   };
 
   return (
-    <div className="bodyLogin">
-      <div className="backgroundLogin">
-        <section className="containerLogin">
+    <div className={login.bodyLogin}>
+      <div className={login.backgroundLogin}>
+        <section className={login.containerLogin}>
           <img src="/images/leetekwoo/webucksLogo.jpg" alt="logo" />
-          <form className="containLogin" onKeyUp={setLogin}>
+          <form className={login.containLogin} onKeyUp={setLogin}>
             <input
               type="text"
-              className="Input id"
+              className={login.Input}
               placeholder="전화번호, 사용자 이름 또는 이메일"
               maxLength="50"
               onChange={handleIdInput}
               onKeyUp={borderID}
               style={borderIDcolor}
               value={idValue}
+              title="올바른 이메일 형식을 입력하시오"
             />
             <input
               type={pwType}
-              className="Input pw"
+              className={login.Input}
               placeholder="비밀번호"
               maxLength="24"
               onChange={handlePwInput}
               onKeyUp={borderPW}
               style={borderPWcolor}
               value={pwValue}
+              title="특수문자, 숫자, 대문자를 포함하여 패스워드를 입력하시오."
             />
             <i className={eye} onClick={pwViewHide}></i>
-            <button className="loginButton" style={Btn} onClick={goToList}>
+            <button
+              className={login.loginButton}
+              style={Btn}
+              onClick={goToList}
+            >
               로그인
             </button>
-            <div className="searchPw" onClick={goToSignup}>
+            <div className={login.searchPw} onClick={goToSignup}>
               비밀번호를 잊으셨나요?
             </div>
           </form>

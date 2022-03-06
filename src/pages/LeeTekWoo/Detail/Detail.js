@@ -101,7 +101,7 @@ function Detail() {
       return null;
     }
     e.preventDefault(); // form 태그 새로고침 발생 X
-    setNewCommentKey(newCommentKey + 1);
+    setNewCommentKey((prev) => prev + 1);
     setEnters(enters.concat(newInput)); // 배열에 객체 추가.
     setInputDataC(""); // id, 댓글 창 빈칸 만들기
     setInputDataId("");

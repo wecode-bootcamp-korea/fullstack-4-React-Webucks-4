@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./TopsNav.scss";
+import { Link, useNavigate } from "react-router-dom";
+import TopNav from "./TopsNav.module.scss";
 
 function TopsNav() {
+  const navigate = useNavigate();
   return (
-    <header className="header">
-      <p>WeBucks</p>
-      <div className="headerMenu">
+    <header className={TopNav.header}>
+      <p onClick={() => navigate("/")}>WeBucks</p>
+      <div className={TopNav.headerMenu}>
         <Link to="/">COFFEE</Link>
         <Link to="/">MENU</Link>
         <Link to="/">STORE</Link>
