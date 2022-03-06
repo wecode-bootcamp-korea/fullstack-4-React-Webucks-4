@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TopsNav from "../TopsNav/TopsNav";
 import { useNavigate, useParams } from "react-router-dom";
 import Comment from "./Comment";
-import "./Detail.scss";
+import detail from "./Detail.module.scss";
 import Footer from "../footer/footer";
 
 function Detail() {
@@ -41,16 +41,6 @@ function Detail() {
   };
 
   // 댓글 리스트 Mock 데이터 받아오기
-  const [commentList, setComment] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:3000/data/leetekwoo/COMMENT_Data.json", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setComment(data);
-      });
-  }, []);
 
   // 댓글란 하단에 새 댓글 추가하기
   // map을 이용해 컴포넌트를 렌더링하기 위한 빈 배열
@@ -71,6 +61,7 @@ function Detail() {
   const [inputDataId, setInputDataId] = useState("");
 
   // 댓글창에 문자가 입력될 때마다 그 문자를 state로 가져오는 함수
+
   const onCommentChange = (e) => {
     setInputDataC(e.target.value);
     setNewInput({
@@ -114,84 +105,69 @@ function Detail() {
     setEnters(enters.filter((comment) => comment.id !== e));
   };
 
-  // 옛날 댓글 삭제
-  const jsonComentDelete = (e) => {
-    setComment(commentList.filter((comment) => comment.id !== e));
-  };
-
   return (
     <div>
-      <div className="wholePage">
+      <div className={detail.wholePage}>
         <TopsNav />
-        <h1 className="sectionTitle">{detailInfo.name}</h1>
-        <p className="toList" onClick={() => navigate("/tekwoo/coffee")}>
+        <h1 className={detail.sectionTitle}>{detailInfo.name}</h1>
+        <p className={detail.toList} onClick={() => navigate("/tekwoo/coffee")}>
           {`홈 > MENU > 음료 > ${detailInfo.name}`}
         </p>
 
-        <div className="containerDetail">
-          <section className="detailInfo">
+        <div className={detail.containerDetail}>
+          <section className={detail.detailInfo}>
             <img src={`/images/${detailInfo.id}.jpg`} alt={detailInfo.name} />
           </section>
-          <section className="detailInfo">
-            <div className="infoTitle">
-              <div className="infoTitles">
-                <h2 className="detailH2">{detailInfo.name}</h2>
-                <h5 className="detailH5">{detailInfo.englishName}</h5>
+          <section className={detail.detailInfo}>
+            <div className={detail.infoTitle}>
+              <div className={detail.infoTitles}>
+                <h2 className={detail.detailH2}>{detailInfo.name}</h2>
+                <h5 className={detail.detailH5}>{detailInfo.englishName}</h5>
               </div>
               <i className={heart} onClick={ChangeHeart}></i>
             </div>
-            <hr className="boldHr" />
+            <hr className={detail.boldHr} />
             <p>{detailInfo.description}</p>
             <hr />
-            <div className="nutritionInfo">
+            <div className={detail.nutritionInfo}>
               <h4>제품 영양 정보</h4>
               <h4>{detailInfo.size}</h4>
             </div>
             <hr />
-            <div className="nutritionInfo">
-              <div className="nutritionOuterwrapper">
-                <div className="nutritionWrapper">
+            <div className={detail.nutritionInfo}>
+              <div className={detail.nutritionOuterwrapper}>
+                <div className={detail.nutritionWrapper}>
                   <p>1회 지공량 (kcal)</p>
                   <p>포화지방 (g)</p>
                   <p>단백질 (g)</p>
                 </div>
-                <div className="nutritionWrapper">
+                <div className={detail.nutritionWrapper}>
                   <p>{detailInfo.nutrition[0].value}</p>
                   <p>{detailInfo.nutrition[1].value}</p>
                   <p>{detailInfo.nutrition[2].value}</p>
                 </div>
               </div>
-              <div className="centerLine"></div>
-              <div className="nutritionOuterwrapper">
-                <div className="nutritionWrapper">
+              <div className={detail.centerLine}></div>
+              <div className={detail.nutritionOuterwrapper}>
+                <div className={detail.nutritionWrapper}>
                   <p>나트륨 (mg)</p>
                   <p>당류 (g)</p>
                   <p>카페인 (mg)</p>
                 </div>
-                <div className="nutritionWrapper">
+                <div className={detail.nutritionWrapper}>
                   <p>{detailInfo.nutrition[3].value}</p>
                   <p>{detailInfo.nutrition[4].value}</p>
                   <p>{detailInfo.nutrition[5].value}</p>
                 </div>
               </div>
             </div>
-            <p className="allergicInfo">
+            <p className={detail.allergicInfo}>
               알레르기 유발 요인 : {detailInfo.allergyInfo}
             </p>
-            <div className="review">
+            <div className={detail.review}>
               <h4>리뷰</h4>
               <hr />
-              <div className="commentArea" id="commentArea">
-                {commentList.map((comment) => {
-                  return (
-                    <Comment
-                      name={comment.userName}
-                      content={comment.content}
-                      key={comment.id}
-                      onClick={() => jsonComentDelete(comment.id)}
-                    />
-                  );
-                })}
+              <div className={detail.commentArea} id="commentArea">
                 {enters.map((comment) => {
                   return (
                     <Comment
@@ -205,19 +181,19 @@ function Detail() {
                 <form onSubmit={getCommentInput}>
                   <input
                     type="text"
-                    className="reviewID"
+                    className={detail.reviewID}
                     placeholder="ID"
                     value={inputDataId}
                     onChange={getIdInput}
                   />
                   <input
                     type="text"
-                    className="reviewLog"
+                    className={detail.reviewLog}
                     placeholder="리뷰를 작성해주세요"
                     value={inputDataC}
                     onChange={onCommentChange}
                   />
-                  <button className="writeReview">작성</button>
+                  <button className={detail.writeReview}>작성</button>
                 </form>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./List.scss";
+import list from "./List.module.scss";
 import TopsNav from "../TopsNav/TopsNav";
 import Card from "./Card";
 
@@ -24,9 +24,9 @@ function List() {
   const navigate = useNavigate();
 
   return (
-    <div className="listBody">
+    <div className={list.listBody}>
       <TopsNav />
-      <div className="title">
+      <div className={list.title}>
         <p>
           콜드 브루 커피 ☕
           <span>
@@ -34,7 +34,7 @@ function List() {
           </span>
         </p>
       </div>
-      <div className="coldBrewSet">
+      <div className={list.coldBrewSet}>
         {cardList.coldBrewCoffee.map((card) => {
           return (
             <Card
@@ -49,7 +49,7 @@ function List() {
         })}
       </div>
 
-      <div className="title">
+      <div className={list.title}>
         <p>
           브루드 커피 ☕
           <span>
@@ -57,7 +57,7 @@ function List() {
           </span>
         </p>
       </div>
-      <div className="brewedSet">
+      <div className={list.brewedSet}>
         {cardList.brewedCoffee.map((card) => {
           return (
             <Card
