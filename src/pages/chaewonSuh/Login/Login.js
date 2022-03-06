@@ -29,7 +29,7 @@ function LoginChaeWon() {
           <div className="inputs" action="./list.html">
               <input type="text" className='userName' onChange = {handleIdInput} placeholder="전화번호, 사용자 이름 또는 이메일"/>
               <input type="password" className="password" onChange = {handlePwInput} placeholder="비밀번호"/>
-              <button className="loginButton" /*disabled="disabled"*/ onClick={clickLogin}>로그인</button>
+              <button className="loginButton" disabled= {inputId.includes('@') && inputPw.length > 4 ? false : true} onClick={clickLogin}>로그인</button>
           </div>
             <Link to="/signup" className="lostPassword" disabled="disabled">비밀번호를 잊으셨나요?</Link>
             </div>

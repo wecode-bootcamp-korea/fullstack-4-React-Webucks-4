@@ -56,7 +56,7 @@ body {
    border-radius: 3px;
 }
 
-.loginButton{
+.loginButton:disabled{
   display: block;
   margin: 10px;
   padding: 10px;
@@ -67,8 +67,8 @@ body {
   border-radius: 8px;
 }
 
-/*
-#loginButton.enabled{
+
+.loginButton{
     display: block;
     margin: 10px;
     padding: 10px;
@@ -78,7 +78,6 @@ body {
     border: 0px;
     border-radius: 8px;
 }
-*/
 
 .lostPassword {
   display: flex;
