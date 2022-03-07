@@ -56,9 +56,6 @@ function Login() {
       : setBorderPW(borderNone);
   };
 
-  // const SetLogin = (e) => {
-
-  // };
   useEffect(() => {
     console.log("useEffect 작동", "idValue는" + idValue, "pwValue는" + pwValue);
     if (emailSpell.test(idValue) && pwRegexp.test(pwValue)) {
