@@ -33,10 +33,10 @@ function Detail() {
       });
   });
 
-  const [heart, setHeart] = React.useState("fa-regular fa-heart");
-  const ChangeHeart = () => {
+  const [heart, setHeart] = useState("fa-regular fa-heart");
+  const ChangeHeart = (e) => {
     heart.includes("regular")
-      ? setHeart("fa-solid fa-heart")
+      ? setHeart(`fa-solid fa-heart ${detail.fa}`)
       : setHeart("fa-regular fa-heart");
   };
 
@@ -49,6 +49,9 @@ function Detail() {
   // 댓글창에 입력된 문자를 가져오는 state
   const [inputDataC, setInputDataC] = useState("");
 
+  // 댓글창에 입력된 ID를 가져오는 State
+  const [inputDataId, setInputDataId] = useState("");
+
   // 위 배열에 들어가기 전 데이터 객체
 
   const [newInput, setNewInput] = useState({
@@ -58,41 +61,22 @@ function Detail() {
   });
 
   const [newCommentKey, setNewCommentKey] = useState(0);
-  const [inputDataId, setInputDataId] = useState("");
 
-  // 댓글창에 문자가 입력될 때마다 그 문자를 state로 가져오는 함수
-
-  const onCommentChange = (e) => {
-    setInputDataC(e.target.value);
-    setNewInput({
-      value: e.target.value,
-      name: inputDataId,
-      id: newCommentKey,
-      // id: enters.length + 1,
-      // 객체 내부 id 값은 전체 배열의 길이 + 1 로
-      // 삭제 기능 구현 시 id 값 겹침 우려있음
-      // 이렇게 되면 comment 먼저 작성하고 -> id 입력 시 inputdataid가 업데이트 되지 않은 상태에서 새로운 댓글이 생성됨.
-    });
-    // 댓글 창의 value들을 inputDataC에 문자가 바뀔 때마다 할당
-  };
-  //
-
-  const getIdInput = (e) => {
-    setInputDataId(e.target.value);
+  useEffect(() => {
     setNewInput({
       value: inputDataC,
-      name: e.target.value,
+      name: inputDataId,
       id: newCommentKey,
     });
-  };
+  }, [inputDataC, inputDataId]);
 
   // form submit 시 빈 배열 enters에 컴포넌트 추가
   const getCommentInput = (e) => {
     if (inputDataC === "" || inputDataId === "") {
-      e.preventDefault();
+      e.preventDefault(); // form 태그 새로고침 발생 X
       return null;
     }
-    e.preventDefault(); // form 태그 새로고침 발생 X
+    e.preventDefault();
     setNewCommentKey((prev) => prev + 1);
     setEnters(enters.concat(newInput)); // 배열에 객체 추가.
     setInputDataC(""); // id, 댓글 창 빈칸 만들기
@@ -185,14 +169,14 @@ function Detail() {
                     className={detail.reviewID}
                     placeholder="ID"
                     value={inputDataId}
-                    onChange={getIdInput}
+                    onChange={(e) => setInputDataId(e.target.value)}
                   />
                   <input
                     type="text"
                     className={detail.reviewLog}
                     placeholder="리뷰를 작성해주세요"
                     value={inputDataC}
-                    onChange={onCommentChange}
+                    onChange={(e) => setInputDataC(e.target.value)}
                   />
                   <button className={detail.writeReview}>작성</button>
                 </form>

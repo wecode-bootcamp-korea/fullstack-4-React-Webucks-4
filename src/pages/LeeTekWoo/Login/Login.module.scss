@@ -40,6 +40,17 @@
       background-color: #ffffff;
     }
 
+    .InputOn {
+      all: unset;
+      outline: none;
+      width: 20rem;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border: 1px solid rgb(3, 163, 16);
+      border-radius: 10px;
+      background: #eeefef;
+    }
+
     i {
       display: inline;
       position: relative;
@@ -56,6 +67,22 @@
       margin-bottom: 5rem;
       text-align: center;
       background-color: #378bcc;
+      opacity: 0.5;
+      line-height: 1.5;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .loginButtonOn {
+      all: unset;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 5rem;
+      text-align: center;
+      background-color: #378bcc;
+      opacity: 1;
+      cursor: pointer;
       line-height: 1.5;
       border-radius: 10px;
       text-decoration: none;
