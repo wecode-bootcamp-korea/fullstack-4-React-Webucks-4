@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import login from "./Login.module.scss";
 import "../../../styles/variables.scss";
 import { useNavigate } from "react-router-dom";
@@ -56,7 +56,11 @@ function Login() {
       : setBorderPW(borderNone);
   };
 
-  const setLogin = (e) => {
+  // const SetLogin = (e) => {
+
+  // };
+  useEffect(() => {
+    console.log("useEffect 작동", "idValue는" + idValue, "pwValue는" + pwValue);
     if (emailSpell.test(idValue) && pwRegexp.test(pwValue)) {
       setBtn(btnOn);
       setLog(true);
@@ -64,7 +68,7 @@ function Login() {
       setBtn(btnOff);
       setLog(false);
     }
-  };
+  }, [borderIDcolor, borderPWcolor]);
 
   // 비밀번호 타입 변환 이벤트 함수
   const pwTypeChange = () => {
@@ -98,7 +102,8 @@ function Login() {
       <div className={login.backgroundLogin}>
         <section className={login.containerLogin}>
           <img src="/images/leetekwoo/webucksLogo.jpg" alt="logo" />
-          <form className={login.containLogin} onKeyUp={setLogin}>
+          <form className={login.containLogin}>
+            {/* {onKeyUp={SetLogin}} */}
             <input
               type="text"
               className={login.Input}

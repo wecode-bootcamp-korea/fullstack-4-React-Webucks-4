@@ -75,6 +75,7 @@ function Detail() {
     });
     // 댓글 창의 value들을 inputDataC에 문자가 바뀔 때마다 할당
   };
+  //
 
   const getIdInput = (e) => {
     setInputDataId(e.target.value);
