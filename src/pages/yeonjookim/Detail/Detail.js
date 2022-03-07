@@ -32,7 +32,7 @@ function Detail() {
 
     function handleAddReview(e) {
         if (e.key === 'Enter') {
-            setNewReview([...newReview, {id:'newbie', text: e.target.value}])
+            setNewReview([...newReview, {key:newReview.length, id:'newbie', text: e.target.value, liked:false}])
             e.target.value = ''
         }
     }
@@ -97,7 +97,7 @@ function Detail() {
                         
 
                     <div className={styles.coffeeDetails__allergy}>알레르기 유발 요인: {coffeeDetail.allergyInfo}</div>
-                    <review>
+                    <section>
                         <div className={styles.review__title}>리뷰</div>
                         <hr />
                         <div className={styles.review}>
@@ -117,14 +117,17 @@ function Detail() {
                                 {newReview && newReview.map(review => {
                                     return(
                                         <Review 
+                                            key={review.key}
+                                            num={review.key}
                                             id={review.id}
                                             text={review.text}
+                                            liked={review.liked}
                                         />
                                 )})}
                             </div>
                         </div>
                         <input className={styles.review__input} type="text" onKeyUp={handleAddReview} placeholder="리뷰를 입력해주세요." />
-                    </review>
+                    </section>
                 </div>
             </article>
         </main>
