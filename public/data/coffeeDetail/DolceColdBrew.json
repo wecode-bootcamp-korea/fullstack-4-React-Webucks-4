@@ -1,43 +1,18 @@
 {
-    "id": "DolceColdBrew"
-    ,
-    "type":"Cold Brew Coffee"
-    ,
-    "name":"돌체 콜드 브루"
-    ,
-    "imgUrl": "/images/DolceColdBrew.jpg"
-    ,
-    "englishName":"Dolce Cold Brew"
-    ,
-    "description":"무더운 여름철, 동남아 휴가지에서 즐기는 커피를 떠오르게 하는 스타벅스 음료의 베스트 x 베스트 조합인 돌체 콜드 브루를 만나보세요!"
-    ,
-    "size":"Tall(톨) / 355ml (12 fl oz)"
-    ,
-    "nutrition":
-    [{  "id":"1",
-        "name":"calorie",
-        "value":"265"
-    },
-    {  "id":"2",
-        "name":"natrium",
-        "value":"130"
-    },
-    {  "id":"3",
-        "name":"fat",
-        "value":"9"
-    },
-    {  "id":"4",
-        "name":"sugars",
-        "value":"29"
-    },
-    {  "id":"5",
-        "name":"protein",
-        "value":"8"
-    },
-    {  "id":"6",
-        "name":"caffeine",
-        "value":"150"
-    }]
-    ,
-    "allergyInfo":"우유"
+  "id": "DolceColdBrew",
+  "type": "Cold Brew Coffee",
+  "name": "돌체 콜드 브루",
+  "imgUrl": "/images/DolceColdBrew.jpg",
+  "englishName": "Dolce Cold Brew",
+  "description": "무더운 여름철, 동남아 휴가지에서 즐기는 커피를 떠오르게 하는 스타벅스 음료의 베스트 x 베스트 조합인 돌체 콜드 브루를 만나보세요!",
+  "size": "Tall(톨) / 355ml (12 fl oz)",
+  "nutrition": [
+    { "id": "1", "name": "calorie", "value": "265" },
+    { "id": "2", "name": "natrium", "value": "130" },
+    { "id": "3", "name": "fat", "value": "9" },
+    { "id": "4", "name": "sugars", "value": "29" },
+    { "id": "5", "name": "protein", "value": "8" },
+    { "id": "6", "name": "caffeine", "value": "150" }
+  ],
+  "allergyInfo": "우유"
 }

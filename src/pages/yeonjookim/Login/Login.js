@@ -45,11 +45,10 @@ function Login() {
                 password: input.pw,
             }),
         })
-            .then((response) => response.json())
-            .then((result) => console.log("결과: ", result))
+            // .then((response) => response.json())
+            // .then((result) => console.log("결과: ", result))
     }
 
-    console.log(input)
 
     return (
         <div className={styles.container}>
