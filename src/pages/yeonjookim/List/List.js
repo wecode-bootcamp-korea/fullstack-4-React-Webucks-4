@@ -45,7 +45,7 @@ function List() {
                     <span className={styles.article__smalltitle}>디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
                 </p>
                 <article className={styles.article}>
-                    {coffeeList == false ? null : coffeeList["brewedCoffee"].map(coffee => {
+                    {coffeeList === false ? null : coffeeList["brewedCoffee"].map(coffee => {
                         return (
                             <Card
                                 key={coffee.id}

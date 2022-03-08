@@ -32,7 +32,7 @@ function Detail() {
 
     function handleAddReview(e) {
         if (e.key === 'Enter') {
-            setNewReview([...newReview, {key:newReview.length, id:'newbie', text: e.target.value, liked:false}])
+            setNewReview([...newReview, {key:newReview.length, id:'newbie', text: e.target.value, isLiked:false}])
             e.target.value = ''
         }
     }
@@ -121,7 +121,7 @@ function Detail() {
                                             num={review.key}
                                             id={review.id}
                                             text={review.text}
-                                            liked={review.liked}
+                                            isLiked={review.isLiked}
                                         />
                                 )})}
                             </div>

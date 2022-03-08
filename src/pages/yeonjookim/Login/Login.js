@@ -12,25 +12,44 @@ function Login() {
         isValid: false
     })
 
-    function valCheck () {
+    // id: "yeonjookim@wecode.com"
+    // pw: "123456!@#ABCabc"
+
+    const valCheck = () => {
         if (input.id.includes('@') && input.pw.length>=5) {
-            setInput({...input, isValid:true})
+            if (!input.isValid) {
+                setInput({...input, isValid:true})
+            }
         }
     }
 
-    function handleIdInput(event) {
+    const handleIdInput = (event) => {
         setInput({...input, id:event.target.value})
         valCheck()
     }
 
-    function handlePwInput(event) {
+    const handlePwInput = (event) => {
         setInput({...input, pw:event.target.value})
         valCheck()
     }
 
     function enter() {
-        navigate("/List-yeonjoo")
+        // navigate("/List-yeonjoo")
+        fetch("/users/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: input.id,
+                password: input.pw,
+            }),
+        })
+            .then((response) => response.json())
+            .then((result) => console.log("결과: ", result))
     }
+
+    console.log(input)
 
     return (
         <div className={styles.container}>
