@@ -7,6 +7,7 @@ import "./styles/variables.scss";
 import Login from "./pages/LeeTekWoo/Login/Login.js";
 import List from "./pages/LeeTekWoo/List/List.js";
 import Detail from "./pages/LeeTekWoo/Detail/Detail";
+import SignUp from "./pages/LeeTekWoo/SignUp/SignUp";
 import Landing from "./Landing";
 
 // // 민지's 컴포넌트
@@ -40,6 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login-tekwoo" element={<Login />} />
+        <Route path="/signup-tekwoo" element={<SignUp />} />
         <Route path="/tekwoo/coffee" element={<List />} />
         <Route path="/tekwoo/coffee/:id" element={<Detail />} />
         {/* 

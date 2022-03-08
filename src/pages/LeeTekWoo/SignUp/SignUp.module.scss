@@ -2,7 +2,8 @@
 
 .bodyLogin {
   background-color: #eeefef;
-  padding: 3rem 0;
+  height: 100vh;
+
   .backgroundLogin {
     @include flexCenter;
   }
@@ -15,6 +16,30 @@
     background-color: #ffffff;
     margin-top: 5rem;
 
+    .toLogin {
+      font-size: 1rem;
+      font-weight: 600;
+      span {
+        color: #378bcc;
+        cursor: pointer;
+      }
+    }
+
+    .splitLine {
+      @include flexCenter;
+      flex-shrink: 0;
+      padding: 1rem;
+      font-size: 14px;
+      font-weight: 600;
+      color: #757575;
+      hr {
+        width: 100px;
+        margin: 0 1rem;
+      }
+      h3 {
+        flex: none;
+      }
+    }
     img {
       margin: 3rem 0;
     }
@@ -90,33 +115,16 @@
 
     .searchPw {
       cursor: pointer;
-      margin: 2rem 0;
       text-decoration: none;
       text-align: center;
-      font-size: 1rem;
       background-color: #ffffff;
       color: #a8bfd0;
+      margin: 4rem 0;
     }
 
     .searchPw:hover,
     i:hover {
       color: #378bcc;
-    }
-  }
-  .signUp {
-    padding: 20px;
-    margin-bottom: 2rem;
-    font-family: "Noto Sans KR";
-    font-size: 1.1rem;
-    font-weight: 400;
-    span {
-      margin-left: 0.5rem;
-      text-decoration: none;
-      color: #005b97;
-      cursor: pointer;
-    }
-    span:hover {
-      color: #0591ee;
     }
   }
 }
