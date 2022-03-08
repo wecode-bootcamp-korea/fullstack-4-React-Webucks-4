@@ -1,18 +1,36 @@
 import React, { useEffect, useState, useMemo } from "react";
-import login from "./Login.module.scss";
+import signup from "./SignUp.module.scss";
 import "../../../styles/variables.scss";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function SignUp() {
   const navigate = useNavigate();
+
   const [logActive, setLog] = useState(false);
   const [btnOn, setBtn] = useState(true);
   const [idValue, setidValue] = useState("");
   const [pwValue, setpwValue] = useState("");
+  const [name, setName] = useState("");
+  const [nickname, setNickname] = useState("");
   const [pwType, setPwType] = useState("password");
   const [eye, setEye] = useState("fa-regular fa-eye");
 
-  // ID & PW 핸들러
+  //
+  const sendAccout = () => {
+    fetch("http://52.79.143.176:8000/users/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: idValue,
+        password: pwValue,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log("결과: ", result));
+    navigate("/login-tekwoo");
+  };
 
   // useMemo 사용? 모르겠음
   // 로그인 조건 정규식
@@ -32,8 +50,10 @@ function Login() {
 
   useEffect(() => {
     // idValue, pwValue 바뀌는데, 안바뀐 부분은 저장 useMemo 활용
-    loginCheck ? setLog(true) : setLog(false);
-  }, [loginCheck]);
+    loginCheck && 4 <= nickname.length && 2 < name.length
+      ? setLog(true)
+      : setLog(false);
+  }, [loginCheck, nickname, name]);
 
   useEffect(() => {
     logActive ? setBtn((prev) => !prev) : setBtn((prev) => prev);
@@ -52,39 +72,30 @@ function Login() {
     pwTypeChange();
   };
 
-  const goToList = (e) => {
-    e.preventDefault();
-    if (logActive) {
-      fetch("http://52.79.143.176:8000/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: idValue,
-          password: pwValue,
-        }),
-      })
-        .then((response) => response.json())
-        .then((result) => console.log("결과: ", result));
-      navigate("/tekwoo/coffee");
-    }
-  };
-
-  const goToSignup = () => {
-    navigate("/");
+  const goToLogin = () => {
+    navigate("/login-tekwoo");
   };
 
   return (
-    <div className={login.bodyLogin}>
-      <div className={login.backgroundLogin}>
-        <section className={login.containerLogin}>
+    <div className={signup.bodyLogin}>
+      <div className={signup.backgroundLogin}>
+        <section className={signup.containerLogin}>
           <img src="/images/leetekwoo/webucksLogo.jpg" alt="logo" />
-          <form className={login.containLogin}>
-            {/* {onKeyUp={SetLogin}} */}
+          <div className={signup.toLogin}>
+            친구들의 사진과 동영상을 보려면{" "}
+            <span onClick={goToLogin}>로그인</span>하세요.
+          </div>
+          <div className={signup.splitLine}>
+            <hr />
+            <h3>또는</h3>
+            <hr />
+          </div>
+          <form className={signup.containLogin}>
             <input
               type="text"
-              className={emailSpell.test(idValue) ? login.InputOn : login.Input}
+              className={
+                emailSpell.test(idValue) ? signup.InputOn : signup.Input
+              }
               placeholder="전화번호, 사용자 이름 또는 이메일"
               maxLength="50"
               onChange={(e) => setidValue(e.target.value)}
@@ -92,8 +103,26 @@ function Login() {
               title="올바른 이메일 형식을 입력하시오"
             />
             <input
+              type="text"
+              className={2 < name.length ? signup.InputOn : signup.Input}
+              placeholder="성명"
+              maxLength="20"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              value={name}
+            />
+            <input
+              type="text"
+              className={4 <= nickname.length ? signup.InputOn : signup.Input}
+              placeholder="사용자 이름"
+              maxLength="15"
+              onChange={(e) => setNickname(e.target.value)}
+              value={nickname}
+            />
+            <input
               type={pwType}
-              className={pwRegexp.test(pwValue) ? login.InputOn : login.Input}
+              className={pwRegexp.test(pwValue) ? signup.InputOn : signup.Input}
               placeholder="비밀번호"
               maxLength="24"
               onChange={(e) => setpwValue(e.target.value)}
@@ -102,26 +131,17 @@ function Login() {
             />
             <i className={eye} onClick={pwViewHide}></i>
             <button
-              className={logActive ? login.loginButtonOn : login.loginButton}
-              onClick={goToList}
+              className={logActive ? signup.loginButtonOn : signup.loginButton}
+              onClick={sendAccout}
               disabled={btnOn}
             >
-              로그인
+              가입하기
             </button>
-            <div className={login.searchPw} onClick={goToSignup}>
-              비밀번호를 잊으셨나요?
-            </div>
           </form>
-          <div className={login.signUp}>
-            <p>
-              계정이 없으신가요?
-              <span onClick={() => navigate("/signup-tekwoo")}>가입하기</span>
-            </p>
-          </div>
         </section>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;

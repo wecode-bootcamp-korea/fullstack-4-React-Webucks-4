@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: small;
+  font-family: "Dancing Script", "Noto Sans KR", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 0.8rem;
+}
+
+section {
+  display: block;
+}
+
+p {
+  line-height: 1.5;
+}
+
+strong {
+  font-weight: 600;
+}

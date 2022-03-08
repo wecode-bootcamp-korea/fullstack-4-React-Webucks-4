@@ -2,10 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./styles/reset.scss";
 import "./styles/common.scss";
+import "./styles/variables.scss";
 
 import Login from "./pages/LeeTekWoo/Login/Login.js";
 import List from "./pages/LeeTekWoo/List/List.js";
 import Detail from "./pages/LeeTekWoo/Detail/Detail";
+import SignUp from "./pages/LeeTekWoo/SignUp/SignUp";
+import Landing from "./Landing";
 
 // 민지's 컴포넌트
 import LoginMinji from "./pages/minjiKong/Login/Login";
@@ -22,32 +25,30 @@ import LoginChaeWon from "./pages/chaewonSuh/Login/Login";
 import ListChaeWon from "./pages/chaewonSuh/List/List";
 import DetailChaeWon from "./pages/chaewonSuh/Detail/Detail";
 
-<<<<<<< HEAD
 // 경훈's 컴포넌트
-import LoginGyeonghun from './pages/Gyeonghunim/Login/Login';
-import ListGyeonghun from './pages/Gyeonghunim/List/List';
-import DetailGyeonghun from './pages/Gyeonghunim/Detail/Detail';
+import LoginGyeonghun from "./pages/Gyeonghunim/Login/Login";
+import ListGyeonghun from "./pages/Gyeonghunim/List/List";
+import DetailGyeonghun from "./pages/Gyeonghunim/Detail/Detail";
 
 // 민우's 컴포넌트
-import LoginMinwoo from './pages/minwooKim/Login/Login';
-import ListMinwoo from './pages/minwooKim/List/List';
-import DetailMinwoo from './pages/minwooKim/Detail/Detail';
-
-=======
->>>>>>> 993779e262a3082334ca208ac6acc5373a31957f
+import LoginMinwoo from "./pages/minwooKim/Login/Login";
+import ListMinwoo from "./pages/minwooKim/List/List";
+import DetailMinwoo from "./pages/minwooKim/Detail/Detail";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/list" element={<List />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/login-tekwoo" element={<Login />} />
+        <Route path="/signup-tekwoo" element={<SignUp />} />
+        <Route path="/tekwoo/coffee" element={<List />} />
+        <Route path="/tekwoo/coffee/:id" element={<Detail />} />
 
         <Route path="/login-minji" element={<LoginMinji />} />
         <Route path="/list-minji" element={<ListMinji />} />
         <Route path="/detail-minji" element={<DetailMinji />} />
-        
+
         <Route path="/Login-yeonjoo" element={<LoginYeonjoo />} />
         <Route path="/List-yeonjoo" element={<ListYeonjoo />} />
         <Route path="/Detail-yeonjoo" element={<DetailYeonjoo />} />
@@ -55,7 +56,6 @@ function App() {
         <Route path="/Login-ChaeWon" element={<LoginChaeWon />} />
         <Route path="/List-ChaeWon" element={<ListChaeWon />} />
         <Route path="/Detail-ChaeWon" element={<DetailChaeWon />} />
-<<<<<<< HEAD
 
         <Route path="/login-gyeonghun" element={<LoginGyeonghun />} />
         <Route path="/list-gyeonghun" element={<ListGyeonghun />} />
@@ -64,9 +64,6 @@ function App() {
         <Route path="/login-minwoo" element={<LoginMinwoo />} />
         <Route path="/list-minwoo" element={<ListMinwoo />} />
         <Route path="/detail-minwoo" element={<DetailMinwoo />} />
-
-=======
->>>>>>> 993779e262a3082334ca208ac6acc5373a31957f
       </Routes>
     </BrowserRouter>
   );

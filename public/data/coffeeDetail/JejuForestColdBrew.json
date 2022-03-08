@@ -1,43 +1,18 @@
 {
-    "id": "JejuForestColdBrew"
-    ,
-    "type":"Cold Brew Coffee"
-    ,
-    "name":"제주 비자림 콜드 브루"
-    ,
-    "imgUrl": "/images/JejuForestColdBrew.jpg"
-    ,
-    "englishName":"Jeju Forest Cold Brew"
-    ,
-    "description":"[제주지역 한정음료] 제주 천년의 숲 비자림을 연상시키는 음료로 제주에서 유기농 말차로 만든 파우더와 Cold Brew를 활용한 음료."
-    ,
-    "size":"Grande(그란데) / 473ml (16 fl oz)"
-    ,
-    "nutrition":
-    [{  "id":"1",
-        "name":"calorie",
-        "value":"340"
-    },
-    {  "id":"2",
-        "name":"natrium",
-        "value":"140"
-    },
-    {  "id":"3",
-        "name":"fat",
-        "value":"8"
-    },
-    {  "id":"4",
-        "name":"sugars",
-        "value":"43"
-    },
-    {  "id":"5",
-        "name":"protein",
-        "value":"10"
-    },
-    {  "id":"6",
-        "name":"caffeine",
-        "value":"105"
-    }]
-    ,
-    "allergyInfo":"우유"
+  "id": "JejuForestColdBrew",
+  "type": "Cold Brew Coffee",
+  "name": "제주 비자림 콜드 브루",
+  "imgUrl": "/images/JejuForestColdBrew.jpg",
+  "englishName": "Jeju Forest Cold Brew",
+  "description": "[제주지역 한정음료] 제주 천년의 숲 비자림을 연상시키는 음료로 제주에서 유기농 말차로 만든 파우더와 Cold Brew를 활용한 음료.",
+  "size": "Grande(그란데) / 473ml (16 fl oz)",
+  "nutrition": [
+    { "id": "1", "name": "calorie", "value": "340" },
+    { "id": "2", "name": "natrium", "value": "140" },
+    { "id": "3", "name": "fat", "value": "8" },
+    { "id": "4", "name": "sugars", "value": "43" },
+    { "id": "5", "name": "protein", "value": "10" },
+    { "id": "6", "name": "caffeine", "value": "105" }
+  ],
+  "allergyInfo": "우유"
 }
