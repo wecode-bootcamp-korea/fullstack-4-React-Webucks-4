@@ -4,6 +4,7 @@ import TopNav from '../Components/TopNav/TopNav'
 import Footer from '../Components/Footer/Footer'
 import styles from './Detail.module.scss'
 import Review from './Review.js'
+import uuid from 'react-uuid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
@@ -11,8 +12,28 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 function Detail() {
     const params = useParams()
     const [ coffeeDetail, setCoffeeDetail ] = useState({})
+    // Review 컴포넌트의 내용(State)을 Detail 컴포넌트에서 관리합니다.
     const [ newReview, setNewReview ] = useState([])
 
+    // Review Component Functions
+    const onRemove = num => {
+        // review.num이 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
+        // = review.num === num 인 것을 제거함
+        setNewReview(newReview.filter(review => review.num !== num));
+    };
+
+    const handleReviewLiked = num => {
+        // review의 속성 하나만 바꾸기 위해서 map함수로 새로운 객체를 생성
+        // review.num === num 일 경우에만 현재 review.isLiked의 속성을 반전시킴
+        setNewReview(
+            newReview.map(review => 
+                review.num === num? 
+                {...review, isLiked: !review.isLiked} 
+                : review)
+        )
+    }
+
+    // Detail Component Functions
     useEffect(() => {
       fetch(`http://localhost:3000/data/coffeeDetail/${params.id}.json`, {
           method: 'GET'
@@ -30,12 +51,15 @@ function Detail() {
         : setCoffeeDetail({...coffeeDetail, isLiked:false})
     }
 
+    // uuid로 생성한 값을 key로 사용하면서 리뷰 좋아요, 삭제 기능을 구현하기 위한 식별자로 사용합니다.
     function handleAddReview(e) {
         if (e.key === 'Enter') {
-            setNewReview([...newReview, {key:newReview.length, id:'newbie', text: e.target.value, isLiked:false}])
+            setNewReview([...newReview, {num:uuid(), id:'newbie', text: e.target.value, isLiked:false}])
             e.target.value = ''
         }
     }
+
+    
     
   return (
     <div>
@@ -53,6 +77,7 @@ function Detail() {
                             <div className={styles.coffeeDetails__title}>{coffeeDetail.name}</div>
                             <div className={styles.coffeeDetails__smalltitle}>{coffeeDetail.englishName}</div>
                         </div>
+                        {/* module.scss를 사용할 경우 여기서 사용하는 styles.liked를 다른 코드에서 작성해도 작동하지 않습니다. 새로운 클래스를 만들어야 합니다. */}
                         <FontAwesomeIcon icon={faHeart} className={`${styles.fas} ${coffeeDetail.isLiked ? styles.liked : ''}`} onClick={handleLiked} />
                     </div>
                     <hr className={styles.coffeeDetails__line} />
@@ -114,14 +139,17 @@ function Detail() {
                                 <span className={styles.review__text}>진짜 {coffeeDetail.name}는 전설이다. 진짜 {coffeeDetail.name}는 전설이다. 진짜 {coffeeDetail.name}는 전설이다. 진짜 화이트 초코 너무 달아서 머리 아파요...</span>
                             </div>
                             <div>
+                                {/* newReview가 빈배열이 아닐 경우에만 Review 컴포넌트를 mount합니다. */}
                                 {newReview && newReview.map(review => {
                                     return(
                                         <Review 
-                                            key={review.key}
-                                            num={review.key}
+                                            key={review.num}
+                                            num={review.num}
                                             id={review.id}
                                             text={review.text}
                                             isLiked={review.isLiked}
+                                            onRemove={onRemove}
+                                            handleReviewLiked={handleReviewLiked}
                                         />
                                 )})}
                             </div>

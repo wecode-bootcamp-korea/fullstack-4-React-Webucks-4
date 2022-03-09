@@ -1,13 +1,19 @@
 import React from 'react'
-import './TopNav.scss'
+import styles from './TopNav.module.scss'
 
 function TopNav() {
+
+  const showMenu = () => {
+    // 작동 안됨..ㅜㅜ
+    document.querySelector("header span:nth-child(2)").value = "🔓"
+  }
+  
   return (
-    <div className='header__box'>
-      <header className='header'>
-          <span className="header__title">WeBucks</span> 
-          <span className="menubtn hidden">🔒</span>
-          <ul className="header__btn">
+    <div className={styles.header__box}>
+      <header className={styles.header}>
+          <span className={styles.header__title}>WeBucks</span> 
+          <span onClick={showMenu} className={`${styles.menubtn} ${styles.hidden}`}>🔒</span>
+          <ul className={styles.header__btn}>
               <li>COFFEE</li>
               <li>MENU</li>
               <li>STORE</li>

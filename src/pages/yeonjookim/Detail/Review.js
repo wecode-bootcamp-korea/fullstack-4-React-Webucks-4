@@ -1,41 +1,21 @@
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState, useEffect } from 'react';
 import styles from './Detail.module.scss'
 
 function Review(props) {
-  const [ state, setState ] = useState(props);
 
-  useEffect(() => {
-    console.log("state변함!")
-    if (state.isLiked) {
-      document.getElementsByTagName('FontAwesomeIcon').className =`${styles.review__heart} ${styles.liked}`
-
-    } else {
-      document.getElementsByTagName('FontAwesomeIcon').className =`{styles.review__heart}`
-    }
-  }, [state])
+  // Review 컴포넌트의 state를 상위의 Detail에서 관리합니다. props로 함수도 넘겨받아서 사용합니다.
   
-  function handleLiked() {
-    console.log("liked button clicked!", state)
-    !state.isLiked ?
-    setState({...state, isLiked:true})
-    : setState({...state, isLiked:false})
-  }
-
-  function handleDel() {
-    console.log(props.num)
-    console.log(state.num)
-    console.log(state.filter(item => item.num !== state.num))
-  }
-
-
   return (
     <div>
       <span className={styles.review__id}>{props.id}</span>
       <span className={styles.review__text}>{props.text}</span>
-      <span onClick={handleLiked}><FontAwesomeIcon icon={faHeart} className={`${styles.review__heart} ${state.isLiked ? styles.liked : ''}`} /></span>
-      <span onClick={handleDel} className={styles.review__del}>✖</span>
+      <span>
+        <FontAwesomeIcon icon={faHeart}  
+        onClick={() => props.handleReviewLiked(props.num)} 
+        className={`${styles.review__heart} ${props.isLiked ? styles.review__heart__liked : ''}`} />
+      </span>
+      <span onClick={() => props.onRemove(props.num)} className={styles.review__del}>✖</span>
     </div>
   )
 }

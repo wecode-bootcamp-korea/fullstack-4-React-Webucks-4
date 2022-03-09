@@ -34,17 +34,17 @@ function Login() {
     }
 
     function enter() {
-        // navigate("/List-yeonjoo")
-        fetch("/users/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                email: input.id,
-                password: input.pw,
-            }),
-        })
+        navigate("/List-yeonjoo")
+        // fetch("/users/login", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify({
+        //         email: input.id,
+        //         password: input.pw,
+        //     }),
+        // })
             // .then((response) => response.json())
             // .then((result) => console.log("결과: ", result))
     }

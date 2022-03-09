@@ -47,6 +47,7 @@
     height: 200px;
     margin-bottom: 6px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .img__content {
@@ -57,8 +58,8 @@
 
 .img__heart {
     position: relative;
-    
     color: lightgray;
+    cursor: pointer;
 }
 
 .liked {
@@ -73,7 +74,11 @@
 
 @media screen and (max-width: 768px) {
   
-    article  {
+    .article__smalltitle {
+        display: none;
+    }
+
+    .article  {
         display:block;
     }
 

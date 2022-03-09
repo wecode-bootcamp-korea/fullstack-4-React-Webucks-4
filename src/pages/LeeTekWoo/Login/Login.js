@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-// import React from "react";
-
-// const Login = () => {
-//   return;
-// };
-
-// export default Login;
-// import React from "react";
-
-// const Login = () => {
-//   return;
-// };
-=======
 import React, { useEffect, useState, useMemo } from "react";
 import login from "./Login.module.scss";
 import "../../../styles/variables.scss";
@@ -137,6 +123,5 @@ function Login() {
     </div>
   );
 }
->>>>>>> 1524a9afe50a8593500290cea5f008db40c310a3
 
-// export default Login;
+export default Login;

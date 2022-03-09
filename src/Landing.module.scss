@@ -3,6 +3,7 @@
 .landing {
   @include flexCenter;
   flex-direction: column;
+  height: 100vh;
   padding: 2%;
   background: tomato;
 

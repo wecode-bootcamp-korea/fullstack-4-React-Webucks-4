@@ -5,6 +5,8 @@ import Footer from '../Components/Footer/Footer'
 import styles from './List.module.scss'
 
 function List() {
+    // MockData에서부터 두 종류로 분리를 해서 배열 형태로 되어 있기 때문에 
+    // 초기값도 이렇게 설정하면 Card 컴포넌트를 mount할때 coffeeList state가 비어있는지 확인하지 않아도 됩니다. (brewedCoffee가 예시)
     const [ coffeeList, setCoffeeList ] = useState({
         coldBrewCoffee: [],
         brewedCoffee: [],

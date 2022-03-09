@@ -166,27 +166,57 @@ hr {
 
 .review__heart {
     color: lightgray;
+    cursor: pointer;
+}
+
+.review__heart__liked {
+    color: red;
 }
 
 .review__del {
     color:rgb(170, 170, 170);
+    cursor: pointer;
 }
 
 
 
 @media screen and (max-width: 768px) {
 
+    .detail__title {
+        text-align: center;
+    }
+    
+    .detail__path {
+        text-align: center;
+    }
+    
+    .detail__article {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .detail__img {
         width: 90vw;
         margin: 0 10px 10px 0;
     }
 
-    article  {
+    .article  {
         display:block;
     }
 
     .article__content {
         width: 100%;
+        padding: 20px;
+    }
+
+    .fas {
+        font-size: x-large;
+        font-weight: 400;
+    }
+
+    .review__text {
+        width: 87%;
     }
 
 }   
