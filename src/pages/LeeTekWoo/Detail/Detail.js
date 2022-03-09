@@ -33,13 +33,6 @@ function Detail() {
       });
   });
 
-  const [heart, setHeart] = useState("fa-regular fa-heart");
-  const ChangeHeart = (e) => {
-    heart.includes("regular")
-      ? setHeart(`fa-solid fa-heart ${detail.fa}`)
-      : setHeart("fa-regular fa-heart");
-  };
-
   // 댓글 리스트 Mock 데이터 받아오기
 
   // 댓글란 하단에 새 댓글 추가하기
@@ -109,7 +102,14 @@ function Detail() {
                 <h2 className={detail.detailH2}>{detailInfo.name}</h2>
                 <h5 className={detail.detailH5}>{detailInfo.englishName}</h5>
               </div>
-              <i className={heart} onClick={ChangeHeart}></i>
+              <i
+                className={"fa-regular fa-heart"}
+                onClick={(e) => {
+                  e.target.className.includes("regular")
+                    ? (e.target.className = `fa-solid fa-heart ${detail.fa}`)
+                    : (e.target.className = "fa-regular fa-heart");
+                }}
+              ></i>
             </div>
             <hr className={detail.boldHr} />
             <p>{detailInfo.description}</p>

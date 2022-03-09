@@ -10,30 +10,30 @@ import Detail from "./pages/LeeTekWoo/Detail/Detail";
 import SignUp from "./pages/LeeTekWoo/SignUp/SignUp";
 import Landing from "./Landing";
 
-// 민지's 컴포넌트
-import LoginMinji from "./pages/minjiKong/Login/Login";
-import ListMinji from "./pages/minjiKong/List/List";
-import DetailMinji from "./pages/minjiKong/Detail/Detail";
+// // 민지's 컴포넌트
+// import LoginMinji from "./pages/minjiKong/Login/Login";
+// import ListMinji from "./pages/minjiKong/List/List";
+// import DetailMinji from "./pages/minjiKong/Detail/Detail";
 
-// 연주's 컴포넌트
-import LoginYeonjoo from "./pages/yeonjookim/Login/Login";
-import ListYeonjoo from "./pages/yeonjookim/List/List";
-import DetailYeonjoo from "./pages/yeonjookim/Detail/Detail";
+// // 연주's 컴포넌트
+// import LoginYeonjoo from "./pages/yeonjookim/Login/Login";
+// import ListYeonjoo from "./pages/yeonjookim/List/List";
+// import DetailYeonjoo from "./pages/yeonjookim/Detail/Detail";
 
-// 채원's 컴포넌트
-import LoginChaeWon from "./pages/chaewonSuh/Login/Login";
-import ListChaeWon from "./pages/chaewonSuh/List/List";
-import DetailChaeWon from "./pages/chaewonSuh/Detail/Detail";
+// // 채원's 컴포넌트
+// import LoginChaeWon from "./pages/chaewonSuh/Login/Login";
+// import ListChaeWon from "./pages/chaewonSuh/List/List";
+// import DetailChaeWon from "./pages/chaewonSuh/Detail/Detail";
 
-// 경훈's 컴포넌트
-import LoginGyeonghun from "./pages/Gyeonghunim/Login/Login";
-import ListGyeonghun from "./pages/Gyeonghunim/List/List";
-import DetailGyeonghun from "./pages/Gyeonghunim/Detail/Detail";
+// // 경훈's 컴포넌트
+// import LoginGyeonghun from "./pages/Gyeonghunim/Login/Login";
+// import ListGyeonghun from "./pages/Gyeonghunim/List/List";
+// import DetailGyeonghun from "./pages/Gyeonghunim/Detail/Detail";
 
-// 민우's 컴포넌트
-import LoginMinwoo from "./pages/minwooKim/Login/Login";
-import ListMinwoo from "./pages/minwooKim/List/List";
-import DetailMinwoo from "./pages/minwooKim/Detail/Detail";
+// // 민우's 컴포넌트
+// import LoginMinwoo from "./pages/minwooKim/Login/Login";
+// import ListMinwoo from "./pages/minwooKim/List/List";
+// import DetailMinwoo from "./pages/minwooKim/Detail/Detail";
 
 function App() {
   return (
@@ -44,7 +44,7 @@ function App() {
         <Route path="/signup-tekwoo" element={<SignUp />} />
         <Route path="/tekwoo/coffee" element={<List />} />
         <Route path="/tekwoo/coffee/:id" element={<Detail />} />
-
+        {/* 
         <Route path="/login-minji" element={<LoginMinji />} />
         <Route path="/list-minji" element={<ListMinji />} />
         <Route path="/detail-minji" element={<DetailMinji />} />
@@ -63,7 +63,7 @@ function App() {
 
         <Route path="/login-minwoo" element={<LoginMinwoo />} />
         <Route path="/list-minwoo" element={<ListMinwoo />} />
-        <Route path="/detail-minwoo" element={<DetailMinwoo />} />
+        <Route path="/detail-minwoo" element={<DetailMinwoo />} /> */}
       </Routes>
     </BrowserRouter>
   );
