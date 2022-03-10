@@ -1,0 +1,43 @@
+@import "./styles/variables.scss";
+
+.landing {
+  @include flexCenter;
+  flex-direction: column;
+  padding: 2%;
+  background: tomato;
+
+  h1 {
+    font-family: "Noto Sans KR";
+    font-size: 4rem;
+    font-weight: bolder;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 2rem;
+    margin: 1rem 0.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .teammates {
+    display: flex;
+    font-family: "Noto Sans KR";
+    .pages {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      li {
+        margin-bottom: 0.3rem;
+        cursor: pointer;
+      }
+      li:hover {
+        color: powderblue;
+      }
+    }
+  }
+  footer {
+    width: 0;
+    font-size: 3rem;
+    background-color: initial;
+  }
+}

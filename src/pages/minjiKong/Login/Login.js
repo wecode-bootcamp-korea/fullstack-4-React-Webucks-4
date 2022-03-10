@@ -1,7 +1,6 @@
 import "./Login.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import { type } from "@testing-library/user-event/dist/type";
 
 function Login() {
   const [inputID, changeInputID] = useState("");
@@ -64,5 +63,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;

@@ -1,43 +1,18 @@
 {
-    "id": "ColdBrewFloat"
-    ,
-    "type":"Cold Brew Coffee"
-    ,
-    "name":"콜드 브루 플로트"
-    ,
-    "imgUrl": "/images/ColdBrewFloat.jpg"
-    ,
-    "englishName":"Cold Brew Float"
-    ,
-    "description":"[리저브 전용음료] 리저브 콜드 브루 위에 녹아 내리는 한 스쿱의 바닐라 아이스크림"
-    ,
-    "size":"Tall(톨) / 355ml (12 fl oz)"
-    ,
-    "nutrition":
-    [{  "id":"1",
-        "name":"calorie",
-        "value":"225"
-    },
-    {  "id":"2",
-        "name":"natrium",
-        "value":"70"
-    },
-    {  "id":"3",
-        "name":"fat",
-        "value":"10"
-    },
-    {  "id":"4",
-        "name":"sugars",
-        "value":"18"
-    },
-    {  "id":"5",
-        "name":"protein",
-        "value":"3"
-    },
-    {  "id":"6",
-        "name":"caffeine",
-        "value":"190"
-    }]
-    ,
-    "allergyInfo":"우유"
+  "id": "ColdBrewFloat",
+  "type": "Cold Brew Coffee",
+  "name": "콜드 브루 플로트",
+  "imgUrl": "/images/ColdBrewFloat.jpg",
+  "englishName": "Cold Brew Float",
+  "description": "[리저브 전용음료] 리저브 콜드 브루 위에 녹아 내리는 한 스쿱의 바닐라 아이스크림",
+  "size": "Tall(톨) / 355ml (12 fl oz)",
+  "nutrition": [
+    { "id": "1", "name": "calorie", "value": "225" },
+    { "id": "2", "name": "natrium", "value": "70" },
+    { "id": "3", "name": "fat", "value": "10" },
+    { "id": "4", "name": "sugars", "value": "18" },
+    { "id": "5", "name": "protein", "value": "3" },
+    { "id": "6", "name": "caffeine", "value": "190" }
+  ],
+  "allergyInfo": "우유"
 }

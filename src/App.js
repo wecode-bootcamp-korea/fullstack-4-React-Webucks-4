@@ -4,10 +4,11 @@ import "./styles/reset.scss";
 import "./styles/common.scss";
 import "./styles/variables.scss";
 
-// 택우's 컴포넌트
-// import Login from "./pages/LeeTekWoo/Login/Login.js";
-// import List from "./pages/LeeTekWoo/List/List.js";
-// import Detail from "./pages/LeeTekWoo/Detail/Detail";
+import Login from "./pages/LeeTekWoo/Login/Login.js";
+import List from "./pages/LeeTekWoo/List/List.js";
+import Detail from "./pages/LeeTekWoo/Detail/Detail";
+import SignUp from "./pages/LeeTekWoo/SignUp/SignUp";
+import Landing from "./Landing";
 
 // 민지's 컴포넌트
 import LoginMinji from "./pages/minjiKong/Login/Login";
@@ -25,23 +26,30 @@ import DetailMinji from "./pages/minjiKong/Detail/Detail";
 // import DetailChaeWon from "./pages/chaewonSuh/Detail/Detail";
 
 // 경훈's 컴포넌트
-// import LoginGyeonghun from "./pages/Gyeonghunim/Login/Login";
-// import ListGyeonghun from "./pages/Gyeonghunim/List/List";
-// import DetailGyeonghun from "./pages/Gyeonghunim/Detail/Detail";
+import LoginGyeonghun from "./pages/Gyeonghunim/Login/Login";
+import ListGyeonghun from "./pages/Gyeonghunim/List/List";
+import DetailGyeonghun from "./pages/Gyeonghunim/Detail/Detail";
 
 // 민우's 컴포넌트
-// import LoginMinwoo from "./pages/minwooKim/Login/Login";
-// import ListMinwoo from "./pages/minwooKim/List/List";
-// import DetailMinwoo from "./pages/minwooKim/Detail/Detail";
+import LoginMinwoo from "./pages/minwooKim/Login/Login";
+import ListMinwoo from "./pages/minwooKim/List/List";
+import DetailMinwoo from "./pages/minwooKim/Detail/Detail";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login-tekwoo" element={<Login />} />
+        <Route path="/signup-tekwoo" element={<SignUp />} />
+        <Route path="/tekwoo/coffee" element={<List />} />
+        <Route path="/tekwoo/coffee/:id" element={<Detail />} />
+
         <Route path="/login-minji" element={<LoginMinji />} />
         <Route path="/list-minji" element={<ListMinji />} />
         <Route path="/detail-minji" element={<DetailMinji />} />
-        {/* <Route path="/Login-yeonjoo" element={<LoginYeonjoo />} />
+
+        <Route path="/Login-yeonjoo" element={<LoginYeonjoo />} />
         <Route path="/List-yeonjoo" element={<ListYeonjoo />} />
         <Route path="/Detail-yeonjoo" element={<DetailYeonjoo />} />
 
@@ -55,7 +63,7 @@ function App() {
 
         <Route path="/login-minwoo" element={<LoginMinwoo />} />
         <Route path="/list-minwoo" element={<ListMinwoo />} />
-        <Route path="/detail-minwoo" element={<DetailMinwoo />} /> */}
+        <Route path="/detail-minwoo" element={<DetailMinwoo />} />
       </Routes>
     </BrowserRouter>
   );

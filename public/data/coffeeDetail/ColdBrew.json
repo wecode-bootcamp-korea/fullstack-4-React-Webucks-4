@@ -1,43 +1,18 @@
 {
-    "id": "ColdBrew"
-    ,
-    "type":"Cold Brew Coffee"
-    ,
-    "name":"콜드 브루"
-    ,
-    "imgUrl": "/images/ColdBrew.jpg"
-    ,
-    "englishName":"Cold Brew"
-    ,
-    "description":"콜드 브루 전용 원두를 차가운 물로 14시간 동안 추출하여 한정된 양만 제공됩니다. 깊은 풍미의 새로운 커피 경험을 즐겨보세요."
-    ,
-    "size":"Tall(톨) / 355ml (12 fl oz)"
-    ,
-    "nutrition":
-    [{  "id":"1",
-        "name":"calorie",
-        "value":"5"
-    },
-    {  "id":"2",
-        "name":"natrium",
-        "value":"11"
-    },
-    {  "id":"3",
-        "name":"fat",
-        "value":"0"
-    },
-    {  "id":"4",
-        "name":"sugars",
-        "value":"0"
-    },
-    {  "id":"5",
-        "name":"protein",
-        "value":"0"
-    },
-    {  "id":"6",
-        "name":"caffeine",
-        "value":"150"
-    }]
-    ,
-    "allergyInfo":"없음"
+  "id": "ColdBrew",
+  "type": "Cold Brew Coffee",
+  "name": "콜드 브루",
+  "imgUrl": "/images/ColdBrew.jpg",
+  "englishName": "Cold Brew",
+  "description": "콜드 브루 전용 원두를 차가운 물로 14시간 동안 추출하여 한정된 양만 제공됩니다. 깊은 풍미의 새로운 커피 경험을 즐겨보세요.",
+  "size": "Tall(톨) / 355ml (12 fl oz)",
+  "nutrition": [
+    { "id": "1", "name": "calorie", "value": "5" },
+    { "id": "2", "name": "natrium", "value": "11" },
+    { "id": "3", "name": "fat", "value": "0" },
+    { "id": "4", "name": "sugars", "value": "0" },
+    { "id": "5", "name": "protein", "value": "0" },
+    { "id": "6", "name": "caffeine", "value": "150" }
+  ],
+  "allergyInfo": "없음"
 }
