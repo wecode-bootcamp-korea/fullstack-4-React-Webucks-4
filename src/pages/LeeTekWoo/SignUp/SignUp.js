@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import signup from "./SignUp.module.scss";
 import "../../../styles/variables.scss";
 import { useNavigate } from "react-router-dom";
@@ -6,29 +6,26 @@ import { useNavigate } from "react-router-dom";
 function SignUp() {
   const navigate = useNavigate();
 
-  const [logActive, setLog] = useState(false);
-  const [btnOn, setBtn] = useState(true);
   const [idValue, setidValue] = useState("");
   const [pwValue, setpwValue] = useState("");
   const [name, setName] = useState("");
   const [nickname, setNickname] = useState("");
   const [pwType, setPwType] = useState("password");
-  const [eye, setEye] = useState("fa-regular fa-eye");
 
   //
-  const sendAccout = () => {
-    fetch("http://52.79.143.176:8000/users/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: idValue,
-        password: pwValue,
-      }),
-    })
-      .then((response) => response.json())
-      .then((result) => console.log("결과: ", result));
+  const sendAccount = () => {
+    // fetch("http://52.79.143.176:8000/users/signup", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     email: idValue,
+    //     password: pwValue,
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((result) => console.log("결과: ", result));
     navigate("/login-tekwoo");
   };
 
@@ -36,40 +33,13 @@ function SignUp() {
   // 로그인 조건 정규식
 
   const emailSpell =
-    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+    /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
   const pwRegexp =
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{7,}$/;
-
-  const loginCheck = useMemo(() => {
-    if (emailSpell.test(idValue) && pwRegexp.test(pwValue)) {
-      return true;
-    } else {
-      return false;
-    }
-  }, [idValue, pwValue]);
-
-  useEffect(() => {
-    // idValue, pwValue 바뀌는데, 안바뀐 부분은 저장 useMemo 활용
-    loginCheck && 4 <= nickname.length && 2 < name.length
-      ? setLog(true)
-      : setLog(false);
-  }, [loginCheck, nickname, name]);
-
-  useEffect(() => {
-    logActive ? setBtn((prev) => !prev) : setBtn((prev) => prev);
-  }, [logActive]);
 
   // 비밀번호 타입 변환 이벤트 함수
   const pwTypeChange = () => {
     pwType === "password" ? setPwType("text") : setPwType("password");
-  };
-
-  // 비밀번호 타입 변환 버튼 on/off
-  const pwViewHide = (e) => {
-    e.target.className.includes("fa-eye-slash")
-      ? setEye("fa-regular fa-eye")
-      : setEye("fa-regular fa-eye-slash");
-    pwTypeChange();
   };
 
   const goToLogin = () => {
@@ -80,15 +50,22 @@ function SignUp() {
     <div className={signup.bodyLogin}>
       <div className={signup.backgroundLogin}>
         <section className={signup.containerLogin}>
-          <img src="/images/leetekwoo/webucksLogo.jpg" alt="logo" />
+          <img
+            className={signup.logo}
+            src="/images/leetekwoo/webucksLogo.jpg"
+            alt="logo"
+          />
           <div className={signup.toLogin}>
             친구들의 사진과 동영상을 보려면{" "}
-            <span onClick={goToLogin}>로그인</span>하세요.
+            <span className={signup.span} onClick={goToLogin}>
+              로그인
+            </span>
+            하세요.
           </div>
           <div className={signup.splitLine}>
-            <hr />
-            <h3>또는</h3>
-            <hr />
+            <hr className={signup.hr} />
+            <h3 className={signup.h3}>또는</h3>
+            <hr className={signup.hr} />
           </div>
           <form className={signup.containLogin}>
             <input
@@ -126,14 +103,31 @@ function SignUp() {
               placeholder="비밀번호"
               maxLength="24"
               onChange={(e) => setpwValue(e.target.value)}
+              onClick={(e) => console.log(e.target.parentNode)}
               value={pwValue}
               title="특수문자, 숫자, 대문자를 포함하여 패스워드를 입력하시오."
             />
-            <i className={eye} onClick={pwViewHide}></i>
+            <i
+              className={"fa-regular fa-eye"}
+              onClick={(e) => {
+                e.target.className.includes("slash")
+                  ? (e.target.className = "fa-regular fa-eye")
+                  : (e.target.className = "fa-regular fa-eye-slash");
+                pwTypeChange();
+              }}
+            ></i>
             <button
-              className={logActive ? signup.loginButtonOn : signup.loginButton}
-              onClick={sendAccout}
-              disabled={btnOn}
+              className={
+                emailSpell.test(idValue) && pwRegexp.test(pwValue)
+                  ? `${signup.loginButton} ${signup.On}`
+                  : signup.loginButton
+              }
+              onClick={sendAccount}
+              disabled={
+                emailSpell.test(idValue) && pwRegexp.test(pwValue)
+                  ? false
+                  : true
+              }
             >
               가입하기
             </button>

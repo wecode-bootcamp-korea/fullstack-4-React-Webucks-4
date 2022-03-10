@@ -11,7 +11,7 @@ function List() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:3000/data/coffeeList.json", {
+    fetch("http://localhost:3001/data/coffeeList.json", {
       method: "GET",
     })
       .then((res) => res.json())

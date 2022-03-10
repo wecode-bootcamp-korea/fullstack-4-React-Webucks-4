@@ -6,14 +6,14 @@
   padding: 2%;
   background: tomato;
 
-  h1 {
+  .titleH1 {
     font-family: "Noto Sans KR";
     font-size: 4rem;
     font-weight: bolder;
     margin: 1rem 0;
   }
 
-  h2 {
+  .titleH2 {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 2rem;
     margin: 1rem 0.5rem;
@@ -26,16 +26,16 @@
     .pages {
       margin-left: 1rem;
       margin-bottom: 1rem;
-      li {
+      .pageLink {
         margin-bottom: 0.3rem;
         cursor: pointer;
       }
-      li:hover {
+      .pageLink:hover {
         color: powderblue;
       }
     }
   }
-  footer {
+  .landingFooter {
     width: 0;
     font-size: 3rem;
     background-color: initial;
