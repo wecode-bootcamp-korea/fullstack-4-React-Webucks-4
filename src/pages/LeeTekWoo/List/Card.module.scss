@@ -6,17 +6,17 @@
   .imageWrap {
     overflow: hidden;
   }
-  img {
+  .img {
     transition: 0.2s;
     width: 20vw;
     height: 20vw;
   }
-  img:hover {
+  .img:hover {
     transition: 0.2s;
     transform: scale(1.2);
     cursor: pointer;
   }
-  p {
+  .p {
     margin-top: 0.5rem;
     margin-bottom: 2rem;
     text-align: center;

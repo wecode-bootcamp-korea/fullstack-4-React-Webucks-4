@@ -6,7 +6,7 @@
   background-color: #f4f4f2;
   margin: 0;
 
-  p {
+  .p {
     font-family: "Dancing Script";
     font-size: x-large;
     font-weight: 700;
@@ -15,14 +15,14 @@
   .headerMenu {
     display: flex;
 
-    a {
+    .link {
       text-decoration: none;
       font-size: small;
       color: #b87835;
       padding-right: 1rem;
     }
 
-    a:last-child {
+    .link:last-child {
       padding-right: 2rem;
     }
   }

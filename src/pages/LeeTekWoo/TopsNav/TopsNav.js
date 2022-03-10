@@ -6,12 +6,22 @@ function TopsNav() {
   const navigate = useNavigate();
   return (
     <header className={TopNav.header}>
-      <p onClick={() => navigate("/")}>WeBucks</p>
+      <p className={TopNav.p} onClick={() => navigate("/")}>
+        WeBucks
+      </p>
       <div className={TopNav.headerMenu}>
-        <Link to="/">COFFEE</Link>
-        <Link to="/">MENU</Link>
-        <Link to="/">STORE</Link>
-        <Link to="/">WHAT'S NEW</Link>
+        <Link className={TopNav.link} to="/">
+          COFFEE
+        </Link>
+        <Link className={TopNav.link} to="/">
+          MENU
+        </Link>
+        <Link className={TopNav.link} to="/">
+          STORE
+        </Link>
+        <Link className={TopNav.link} to="/">
+          WHAT'S NEW
+        </Link>
       </div>
     </header>
   );
