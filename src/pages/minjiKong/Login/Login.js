@@ -1,20 +1,41 @@
 import "./Login.scss";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
+// import { type } from "@testing-library/user-event/dist/type";
 
 function Login() {
-  const [inputVal, changeInputVal] = useState("");
+  const [inputID, changeInputID] = useState("");
+  const [inputPW, changeInputPW] = useState("");
 
-  const navigate = useNavigate();
+  const disabled = inputID.includes("@") && inputPW.length >= 5;
 
-  const goToList = () => {
-    navigate("/list-minji");
+  // const navigate = useNavigate();
+
+  // const goToList = () => {
+  //   navigate("/list-minji");
+  // };
+
+  const handleLogin = () => {
+    fetch("/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: inputID,
+        password: inputPW,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log("결과 :", result));
   };
 
-  const handleInput = (event) => {
-    console.log(event.target.value);
-    changeInputVal(event.target.value);
-    console.log(inputVal);
+  const handleInputID = (event) => {
+    changeInputID(event.target.value);
+  };
+
+  const handleInputPW = (event) => {
+    changeInputPW(event.target.value);
   };
 
   return (
@@ -25,15 +46,15 @@ function Login() {
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
           className="id"
-          onChange={handleInput}
+          onChange={handleInputID}
         />
         <input
           type="password"
           placeholder="비밀번호"
           className="pw"
-          onChange={handleInput}
+          onChange={handleInputPW}
         />
-        <button className="btn" onClick={goToList}>
+        <button className="btn" onClick={handleLogin} disabled={!disabled}>
           로그인
         </button>
       </div>

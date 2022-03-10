@@ -12,6 +12,7 @@ import "./styles/variables.scss";
 // 민지's 컴포넌트
 import LoginMinji from "./pages/minjiKong/Login/Login";
 import ListMinji from "./pages/minjiKong/List/List";
+import DetailMinji from "./pages/minjiKong/Detail/Detail";
 
 // 연주's 컴포넌트
 // import LoginYeonjoo from "./pages/yeonjookim/Login/Login";
@@ -39,7 +40,7 @@ function App() {
       <Routes>
         <Route path="/login-minji" element={<LoginMinji />} />
         <Route path="/list-minji" element={<ListMinji />} />
-
+        <Route path="/detail-minji" element={<DetailMinji />} />
         {/* <Route path="/Login-yeonjoo" element={<LoginYeonjoo />} />
         <Route path="/List-yeonjoo" element={<ListYeonjoo />} />
         <Route path="/Detail-yeonjoo" element={<DetailYeonjoo />} />
