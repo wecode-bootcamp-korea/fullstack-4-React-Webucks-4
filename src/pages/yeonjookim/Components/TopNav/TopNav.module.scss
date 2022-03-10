@@ -52,10 +52,18 @@
         margin: 0 auto;
     }
 
+    .header {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        background-color: bisque;
+        text-align: center;
+    }
+
     .menubtn {
         display: inline-block;
         position: absolute;
-        right: 80px;
+        right: 30px;
         cursor: pointer;
     }
 
@@ -63,8 +71,17 @@
         display: none;
     }
 
+    .header__btn__clicked {
+        display:list-item;
+    }
+
+    .header__btn__clicked li {
+        padding: 3px 0;
+        font-weight: 500;
+    }
+
     .show {
         display: flex;
         flex-direction: column;
     }
-}   
+}
