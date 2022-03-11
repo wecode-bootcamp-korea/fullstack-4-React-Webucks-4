@@ -6,38 +6,42 @@ import styles from './Login.module.scss'
 function Login() {
     const navigate = useNavigate()
     
+    // id: "yeonjookim@wecode.com"
+    // pw: "123456!@#ABCabc"
+
     const [input, setInput] = useState({
         id: '',
         pw: '',
         isValid: false
     })
 
-    // id: "yeonjookim@wecode.com"
-    // pw: "123456!@#ABCabc"
-
     useEffect(() => {
       valCheck()
-    }, [input])
+    }, [input.id, input.pw])
     
 
     const valCheck = () => {
         if (input.id.includes('@') && input.pw.length>=5) {
-            if (!input.isValid) {
-                setInput({...input, isValid:true})
-            }
-        } else {
-            setInput({...input, isValid:false})
+            setInput({...input, isValid:true})
         }
     }
 
-    const handleIdInput = (event) => {
-        setInput({...input, id:event.target.value})
-        // valCheck()
+    const handleIdInput = (event) => {   
+        if (!event.target.value.includes('@')) {
+            setInput({...input, id:event.target.value, isValid:false})
+        } else {
+            setInput({...input, id:event.target.value})
+            valCheck()
+        }
     }
 
-    const handlePwInput = (event) => {
-        setInput({...input, pw:event.target.value})
-        // valCheck()
+    const handlePwInput = (event) => {      
+        if (event.target.value.length < 5) {
+            setInput({...input, pw:event.target.value, isValid:false})
+        } else {
+            setInput({...input, pw:event.target.value})
+            valCheck()
+        }
     }
 
     function enter() {
@@ -62,8 +66,10 @@ function Login() {
             <div className={styles.login__container}>
                 <img className={styles.webucks__logo} src='./images/yeonjookim/webucks_logo.svg' alt="webucks_logo" />
                 <div className={styles.login__box}>
-                    <input className={styles.login__input} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={handleIdInput} required />
-                    <input className={styles.login__input} type="password" placeholder="비밀번호" onChange={handlePwInput} onKeyUp={e => {if (e.key==='Enter') return enter()}} required />
+                    <input className={styles.login__input} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" 
+                        onChange={handleIdInput} onKeyUp={e => {if (e.key==='Enter') return enter()}} required />
+                    <input className={styles.login__input} type="password" placeholder="비밀번호" 
+                        onChange={handlePwInput} onKeyUp={e => {if (e.key==='Enter') return enter()}} required />
                     <button className={`${styles.login__btn} ${input.isValid? styles.active : ''}`} disabled={input.isValid? false : true} onClick={enter} >로그인</button>
                 </div>
                 <Link to="/signup">비밀번호를 잊으셨나요?</Link>
