@@ -3,15 +3,15 @@ import "./App.css";
 import "./styles/reset.scss";
 import "./styles/common.scss";
 import "./styles/variables.scss";
-import Landing from "./Landing";
 
 // 택우님 컴포넌트
 import Login from "./pages/LeeTekWoo/Login/Login.js";
 import List from "./pages/LeeTekWoo/List/List.js";
 import Detail from "./pages/LeeTekWoo/Detail/Detail";
 import SignUp from "./pages/LeeTekWoo/SignUp/SignUp"
+import Landing from "./Landing";
 
-// // 민지's 컴포넌트
+// 민지's 컴포넌트
 import LoginMinji from "./pages/minjiKong/Login/Login";
 import ListMinji from "./pages/minjiKong/List/List";
 import DetailMinji from "./pages/minjiKong/Detail/Detail";
@@ -21,17 +21,17 @@ import LoginYeonjoo from "./pages/yeonjookim/Login/Login";
 import ListYeonjoo from "./pages/yeonjookim/List/List";
 import DetailYeonjoo from "./pages/yeonjookim/Detail/Detail";
 
-// // 채원's 컴포넌트
+// 채원's 컴포넌트
 import LoginChaeWon from "./pages/chaewonSuh/Login/Login";
 import ListChaeWon from "./pages/chaewonSuh/List/List";
 import DetailChaeWon from "./pages/chaewonSuh/Detail/Detail";
 
-// // 경훈's 컴포넌트
+// 경훈's 컴포넌트
 import LoginGyeonghun from "./pages/Gyeonghunim/Login/Login";
 import ListGyeonghun from "./pages/Gyeonghunim/List/List";
 import DetailGyeonghun from "./pages/Gyeonghunim/Detail/Detail";
 
-// // 민우's 컴포넌트
+// 민우's 컴포넌트
 import LoginMinwoo from "./pages/minwooKim/Login/Login";
 import ListMinwoo from "./pages/minwooKim/List/List";
 import DetailMinwoo from "./pages/minwooKim/Detail/Detail";
