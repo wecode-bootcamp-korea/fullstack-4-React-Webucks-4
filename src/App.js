@@ -8,7 +8,7 @@ import "./styles/variables.scss";
 import Login from "./pages/LeeTekWoo/Login/Login.js";
 import List from "./pages/LeeTekWoo/List/List.js";
 import Detail from "./pages/LeeTekWoo/Detail/Detail";
-import SignUp from "./pages/LeeTekWoo/SignUp/SignUp"
+import SignUp from "./pages/LeeTekWoo/SignUp/SignUp";
 import Landing from "./Landing";
 
 // 민지's 컴포넌트
