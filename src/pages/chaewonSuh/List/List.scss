@@ -26,15 +26,18 @@ html {
         font-family: 'Dancing Script';
         font-weight: bold;
         font-size: 40px;
+        background-color: #e2e4e0;
     }
 
     .menus {
         display: flex;
+        background-color: #e2e4e0;
 
         .topRightMenu{
             margin: 10px;
             font-size: 16px;
             font-weight: 150;
+            background-color: #e2e4e0;
         }
     }    
 }
@@ -52,21 +55,25 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    background-color: #e2e4e0;
     // width: 390px;
 
         .espCategory {
         font-weight: bold;
         font-size: 20px;
+        background-color: #e2e4e0;
         }
 
         .fa-solid {
             font-size: 30px;
             color: green;
             padding: 0 10px;
+            background-color: #e2e4e0;
         }
 
         .description {
             font-size: 16px;
+            background-color: #e2e4e0;
         }
     }
 

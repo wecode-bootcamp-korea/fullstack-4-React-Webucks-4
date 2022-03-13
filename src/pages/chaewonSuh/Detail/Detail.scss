@@ -1,22 +1,234 @@
-.menuAndLocation {
+* {
+    box-sizing: border-box;
+    background-color: white;
+    
+    .wholePage {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 15px 30px 0px 30px;
 
-    .Drink {
+        //메뉴 카테고리와 현재 페이지상 위치
+        .categoryAndLocation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding-top: 5px;
+            height: 50px;
+            //큼직한 메뉴 카테고리
+            .drinkCategory {
+                font-size: 25px;
+                font-weight: bold;
+                
+            }
+            //현재 페이지상 위치
+            .location {
+                display: flex;
+                flex-direction: column-reverse;
+                font-size: 12px;
+                color: grayscale($color: #8f8f8f)
+            }
+        }
 
-    }
+        //이미지와 설명이 담겨있는 div
+        .detailBody {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            //이미지 감싸는 div
+            .imageWrapper {
+                object-fit: contain;
+                width: 70%;
+                height: 50%;
+                //이미지
+                .coffeeImgChae{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
 
-    .location {
-        
-    }
-}
+            //글들이 담겨있는 div
+            .detailedDescriptions {
+                display: flex;
+                flex-direction: column;
+                // border: 1px solid black;
+                padding: 0 10px;
+                margin-left: 40px;
+                //커피 이룸과 좋아요 하트
+                .coffeeNameAndLike {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-bottom: 15px;
+                    border-bottom: 2.5px solid black;
+                    //이름 모아놓은 박스
+                    .names {
+                
+                        
+                        //음료 이름(중간 사이즈 한글)
+                        .drinkName {
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+                        //음료 영어 이름
+                        .drinkEngName{
+                            padding-top: 2px;
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+                    }
 
+                    //하트
+                    .fa-heart {
+                        padding-top: 12px;
+                        border: 0px;
+                        font-size: 20px;
+                        cursor: pointer;
+                        }
 
-.detailBody {
+                        //빈 하트
+                        .fa-regular{
+                            color: rgb(182, 182, 182);
+                        }
 
-    .coffeeImg{
+                        //찬 하트
+                        .fa-solid{
+                            color: rgb(238, 68, 68);
 
-    }
+                    }
+                }   
 
-    .detailedDescription {
+                //음료 설명
+                .drinkDescription {
+                    padding: 15px 0;
+                    font-size: 15px;
+                }
 
+                //제품 영양 정보
+                .nutritionAndSize{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 18px 10px;
+                    font-size: 18px;
+                    border-top: 0.8px solid rgb(189, 189, 189);
+                    border-bottom: 0.8px solid rgb(189, 189, 189);
+                    //제품 영양 정보 
+                    .nutritionLetter{
+                        font-weight: 500;
+                    }
+
+                    //음료 사이즈
+                    .sizeOfDrink {
+                        font-weight: 500;
+                    }
+                }
+
+                //영양정보칸
+                .nutritions {
+                    display: flex;
+                    justify-content: center;
+                    padding: 10px 10px;
+                    width: 100%;
+                    height: 26%;
+                    object-fit: inherit;
+                    //왼쪽칸
+                    .leftNutrition{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 50%;
+                        padding-right: 10px;
+                        border-right: 0.8px dashed black;
+                        
+                        //왼쪽 영양소이름
+                        .leftLetters{
+                            text-align: left;      
+                            line-height: 2.1;       
+                        }
+
+                        //오른쪽 영양량
+                        .rightLetters{
+                            text-align: right;
+                            line-height: 2.1;
+                        }
+                    }
+
+                    //오른쪽칸
+                    .rightNutrition{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 50%;
+                        padding-left: 10px;
+                        border-left: 0.8px dashed black;
+                    
+                        //왼쪽 영양소이름
+                        .leftLetters{
+                            text-align: left;
+                            line-height: 2.1;
+                        }
+
+                        //오른쪽 영양량
+                        .rightLetters{
+                            text-align: right;
+                            line-height: 2.1;
+                        }
+                    }
+                }
+
+                //알레르기 배너
+                .allergies {
+                    padding: 10px 10px;
+                    font-size: 30px;
+                }
+
+                //리뷰 타이틀
+                .review {
+                    font-size: 20px;
+                    font-weight: 800;
+                    padding: 8px;
+                    margin-bottom: 10px;
+                }
+
+                //리뷰 모음집
+                .userReview {
+                    font-size: 20px;
+                    //닉네임
+                    .userId {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        font-weight: bold;
+                        //리뷰 내용 
+                        .userComment {
+                            display: flex;  
+                            justify-content: flex-end;
+                            font-weight: normal;
+                        }
+                    }
+
+                    //새 리뷰 인풋 
+                    .newReview {
+                        width: 100%;
+                        font-size: 20px;
+                        background-color: rgb(241, 241, 241);
+                        border: 0.25px solid #a09f9f;
+                        border-radius: 5px;
+                        margin: 10px 0;
+                    }
+                }
+            
+
+            }
+        }
+
+        //footer 
+        .footers {
+
+            //세로 링크 카드
+            .companyInfo {
+                
+            }
+        }
     }
 }

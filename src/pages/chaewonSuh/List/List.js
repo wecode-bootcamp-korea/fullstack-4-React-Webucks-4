@@ -2,6 +2,7 @@ import "./List.scss"
 import TopNavChaeWon from "./TopNav";
 import { useEffect, useState } from "react";
 import CoffeeCardComp from "./CoffeeCardComp";
+import { Link, useNavigate } from "react-router-dom";
 
 function ListChaeWon () {
 
