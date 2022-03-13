@@ -4,6 +4,7 @@ import "./styles/reset.scss";
 import "./styles/common.scss";
 import "./styles/variables.scss";
 
+// 택우님 컴포넌트
 import Login from "./pages/LeeTekWoo/Login/Login.js";
 import List from "./pages/LeeTekWoo/List/List.js";
 import Detail from "./pages/LeeTekWoo/Detail/Detail";
@@ -51,7 +52,7 @@ function App() {
 
         <Route path="/Login-yeonjoo" element={<LoginYeonjoo />} />
         <Route path="/List-yeonjoo" element={<ListYeonjoo />} />
-        <Route path="/Detail-yeonjoo" element={<DetailYeonjoo />} />
+        <Route path="/Detail-yeonjoo/:id" element={<DetailYeonjoo />} />
 
         <Route path="/Login-ChaeWon" element={<LoginChaeWon />} />
         <Route path="/List-ChaeWon" element={<ListChaeWon />} />

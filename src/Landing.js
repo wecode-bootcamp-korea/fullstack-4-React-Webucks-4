@@ -74,7 +74,7 @@ function Landing() {
             </li>
             <li
               className={styles.pageLink}
-              onClick={() => navigate("/Detail-yeonjoo")}
+              onClick={() => navigate("/Detail-yeonjoo/NitroVanillaCream")}
             >
               Detail
             </li>

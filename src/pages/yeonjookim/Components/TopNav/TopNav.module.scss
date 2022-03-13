@@ -1,0 +1,87 @@
+.header__box {
+    width: 94vw;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 60px;
+    padding: 12px;
+    background-color: bisque;
+    text-indent: 2px;
+}
+
+.header__title {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.header__btn {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    list-style: none;
+    color: rgb(170, 170, 170);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.header__btn li {
+    padding-left: 20px;
+}
+
+
+.menubtn {
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  
+    .header__box {
+        width: 100vw;
+        margin: 0 auto;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        background-color: bisque;
+        text-align: center;
+    }
+
+    .menubtn {
+        display: inline-block;
+        position: absolute;
+        right: 30px;
+        cursor: pointer;
+    }
+
+    .header__btn {
+        display: none;
+    }
+
+    .header__btn__clicked {
+        display:list-item;
+    }
+
+    .header__btn__clicked li {
+        padding: 3px 0;
+        font-weight: 500;
+    }
+
+    .show {
+        display: flex;
+        flex-direction: column;
+    }
+}
